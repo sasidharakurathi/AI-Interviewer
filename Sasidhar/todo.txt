@@ -1,0 +1,6 @@
+
+TODO:
+    Fix - Invalid Analysis for wrong answers or irrelevant answers
+    Add 'JD' to the Prompt and also questions should be based on the required skills mentioned in the 'JD'. 
+    Implement Difficulty of the questions based on the experience of the candidate.
+

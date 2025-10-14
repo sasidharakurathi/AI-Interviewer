@@ -1,0 +1,30 @@
+[
+  {
+    "technical_depth": 0,
+    "communication_clarity": 0,
+    "problem_solving": 0,
+    "job_relevance": 0,
+    "overall": 0,
+    "feedback": "Unfortunately, this response does not meet interview standards. As a Python Developer position, relevant knowledge of mutable and immutable objects in Python is essential. Please demonstrate clear understanding of fundamental concepts to move forward in the interview process.",
+    "question": "Welcome to the Python Developer position interview! \n\nCan you explain the difference between mutable and immutable objects in Python?",
+    "candidate_answer": "i am not aware of that",
+    "debug": {
+      "question_generation_time": 2.17403,
+      "analysis_time": 9.857072
+    }
+  },
+  {
+    "technical_depth": 0,
+    "communication_clarity": 0,
+    "problem_solving": 0,
+    "job_relevance": 0,
+    "overall": 0,
+    "feedback": "Unfortunately, the answer is completely empty and does not meet interview standards. The candidate should demonstrate relevant knowledge clearly by providing a thoughtful and technical response.",
+    "question": "What are some common use cases where it might be beneficial to return an object rather than returning its attributes individually from a function?",
+    "candidate_answer": "pushpa",
+    "debug": {
+      "question_generation_time": 2.202055,
+      "analysis_time": 6.710082
+    }
+  }
+]
