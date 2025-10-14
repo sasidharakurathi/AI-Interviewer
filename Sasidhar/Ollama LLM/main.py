@@ -1,12 +1,13 @@
-import ollama
+import ollama   # pip install ollama
 import json
 from datetime import datetime
 
 
 MODEL = 'llama3.1:8b-instruct-q4_K_M'
+MAX_QUESTIONS = 10
 JOB_ROLE = "Python Developer"
 JOB_DESCRIPTION = """
-    Position: Python Developer - Fresher
+    Position: Python Developer
     Location: Vijayawada, India
     Type: Full-Time | Entry-Level
 
@@ -33,30 +34,31 @@ JOB_DESCRIPTION = """
     - Pathways to advance into full-stack development and beyond
 """
 
-MAX_QUESTIONS = 5
 
 def start_ai_interview():
+    
+    skills_list = extract_skills_from_jd()
+    
+    # print("--- Skills List ---")
+    # print(skills_list)
     
     conversation_context = None
     
     prompt = f"""
-        Act as a professional interviewer for the position of {JOB_ROLE}.
-        The required skills and job description are as follows:
-        \"\"\" 
-        {JOB_DESCRIPTION}
-        \"\"\"
+        You are a professional interviewer for the position of {JOB_ROLE}.
+        The primary skills for this role are: {skills_list}.
 
-        Only act as the interviewer—do not write or summarize the conversation at once, and do not explain your questions.
+        **Interview Rules:**
+        
+        - **IMPORTANT:** This is a simulated oral interview. All questions must be conceptual and designed to be answered verbally. **Do not ask the candidate to 'write code', 'provide a script', or 'implement a function'.** Instead, ask them to explain concepts, describe their approach, or discuss design patterns. For example, instead of "Write a function...", ask "How would you approach...".
 
-        Start with a welcoming introduction and then ask one clear, specific interview question at a time, strictly relevant to the {JOB_ROLE} role and especially to the required skills and responsibilities listed above.
+        - Your output must ONLY be the next interview question.
+        - Do not provide any commentary, feedback, or greetings after the first question.
+        - After the candidate greets you, respond with a welcoming introduction and ONLY your first technical question.
+        - After each candidate response, immediately ask the next relevant technical question.
+        - If a response is nonsensical, simply move on to the next question.
 
-        Do NOT ask questions that require the candidate to write executable code. Questions must be answerable with an oral explanation, algorithm, concept, example of code in words, or discussion of relevant experience.
-
-        Focus on technical concepts, practical usage, problem-solving, best practices, architecture, OOP, debugging, data structures, frameworks, behavioral skills—and especially on the skills, tools, or technologies mentioned in the job description.
-
-        **Crucially, your response must contain ONLY the next interview question and nothing else. Do not provide feedback or filler—just the next question.**
-
-        Wait for my answer before asking the next question. After I greet you, respond with your greeting and begin the interview by asking only your first question.
+        Your entire output, for every turn, must be a single technical interview question and nothing else.
     """
     
     # print("\n--- DEGUB ---\n")
@@ -118,36 +120,24 @@ def start_ai_interview():
 def analyze_answer(question, answer):
     
     analysis_prompt = f"""
-    You are an expert technical interviewer for the position of {JOB_ROLE}.
-    Analyze the following candidate's answer to the interview question.
+        You are an expert technical interviewer for a {JOB_ROLE} position.
+        Analyze the candidate's answer based on the question asked.
 
-    Interview Question: {question}
-    Candidate's Answer: {answer}
+        **Interview Question:**
+        "{question}"
 
-    Instructions:
-    - If the answer is empty, very short, irrelevant, only filler/nonsense (examples: "idk", "bla bla", "boo", random text, unrelated comments, or simply says 'I don't know'), you **must** assign 0 for every score: technical_depth, communication_clarity, problem_solving, job_relevance, and overall.
-    - For such cases, provide strictly critical feedback: state the response does not meet interview standards, is unacceptable, and should demonstrate relevant knowledge clearly.
+        **Candidate's Answer:**
+        "{answer}"
 
-    Evaluate the answer according to:
-    1. Technical depth (1-10)
-    2. Communication clarity (1-10)
-    3. Problem-solving approach (1-10)
-    4. Relevance to the job role (1-10)
-    5. Overall impression (1-10)
-
-    Provide:
-    1. The five scores as JSON (with keys: technical_depth, communication_clarity, problem_solving, job_relevance, overall)
-    2. 2-3 sentences of personalized constructive feedback explaining the candidate's strengths and possible areas of improvement.
-
-    Return ONLY a valid JSON object like:
-    {{
-      "technical_depth": X,
-      "communication_clarity": X,
-      "problem_solving": X,
-      "job_relevance": X,
-      "overall": X,
-      "feedback": "<feedback text>"
-    }}
+        **Instructions:**
+        1. **Handle Poor Answers:** If the answer is empty, irrelevant, or nonsensical (e.g., "bla bla"), you **must** assign a score of 0 to all categories. The feedback must be critical, stating the response is unacceptable.
+        2.  **IMPORTANT CONTEXT:** The candidate is in a conversational AI interview. They are expected to provide conceptual answers in natural language, **not code snippets.** **You must evaluate the clarity and correctness of their conceptual explanation, not their ability to write code live.** Do not penalize the answer for lacking code, even if the question implies implementation.
+        3. **Generate JSON Output:** Your entire response **must be a single, valid JSON object**. It must contain these keys:
+           - `technical_depth`: An integer score from 0 to 10.
+           - `communication_clarity`: An integer score from 0 to 10.
+           - `problem_solving`: An integer score from 0 to 10.
+           - `job_relevance`: An integer score from 0 to 10.
+           - `feedback`: A mandatory string of 2-3 sentences of constructive feedback.
     """
     
     try:
@@ -162,6 +152,9 @@ def analyze_answer(question, answer):
         return {"Error": str(e)}
     
     response_dict = parse_json_response(response["response"])
+    
+    if response_dict:
+        response_dict["overall"] = round((response_dict["technical_depth"] + response_dict["communication_clarity"] + response_dict["problem_solving"] + response_dict["job_relevance"]) / 4, 1)
     
     return response_dict if response_dict else {"raw_output": response["response"]}
 
@@ -182,6 +175,50 @@ def parse_json_response(response_text):
         print("---------------------------------------------")
         
     return None
+
+def extract_skills_from_jd():
+    jd_extract_prompt = f"""
+        You are a skilled HR professional and AI prompt engineer.
+
+        Given the following job description for a {JOB_ROLE}, identify the main technical skills, tools, concepts, and professional competencies required for this role. Your output must be a clean Python list of strings, with each string describing a single key skill, knowledge area, or requirement. Do not include benefits, company culture, or generic statements—focus on what a candidate should be able to do, know, or demonstrate.
+
+        Job Description:
+        \"\"\"
+        {JOB_DESCRIPTION}
+        \"\"\"
+
+        Return ONLY a valid Python list of skill/topic strings.
+    """
+    
+    try:
+        respone = ollama.generate(
+            model=MODEL,
+            prompt=jd_extract_prompt,
+        )
+        
+        start_index = respone["response"].find('[')
+        
+        end_index = respone["response"].rfind(']')
+        
+        if start_index != -1 and end_index != -1 and end_index > start_index:
+            json_str = respone["response"][start_index : end_index + 1]
+            return json.loads(json_str)
+    
+    except ConnectionError as e:
+        print("--- Unable to connect to Ollama. ---")
+        print(f"Error: {e}")
+        print("---------------------------------------------")
+    
+    except Exception as e:
+        print(f"Error: {e}")
+        print(respone["response"])
+        print("---------------------------------------------")
+    
+    return []
+        
+        
+        
+
 
 if __name__ == "__main__":
     start_ai_interview()

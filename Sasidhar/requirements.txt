@@ -1,0 +1,4 @@
+# Sasidhar
+ollama
+google-generativeai
+python-dotenv
