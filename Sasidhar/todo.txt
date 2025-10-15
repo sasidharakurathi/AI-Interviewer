@@ -4,3 +4,5 @@ TODO:
     Add 'JD' to the Prompt and also questions should be based on the required skills mentioned in the 'JD'. -> Done
     Implement Difficulty of the questions based on the experience of the candidate. -> Done
 
+    Develop: AI HR Interviewer question generation and analyzer.    -> Done
+    Implement OOP for AI Technical Interviewer and AI HR Interviewer.   -> Done

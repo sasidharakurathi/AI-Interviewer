@@ -1,0 +1,14 @@
+{
+    "questions": [
+        "Can you explain the difference between a list and a tuple in Python and provide a scenario where you would prefer one over the other?",
+        "Describe what a dictionary in Python is and how you would access, add, and remove elements from it.",
+        "What is object-oriented programming (OOP) in Python? Briefly explain the concepts of classes and objects with a simple example.",
+        "Imagine you have a database table named 'employees' with columns 'employee_id', 'name', and 'department'. Write a basic MySQL query to select all employees from the 'IT' department.",
+        "What is the purpose of using Git in a development workflow, and what are some basic Git commands you would use to manage your code?",
+        "If you were given a list of numbers in Python, how would you find the largest and smallest numbers efficiently?",
+        "Explain what a JOIN clause is in SQL and describe one type of JOIN (e.g., INNER JOIN, LEFT JOIN) and when you might use it.",
+        "What does it mean to 'debug' code, and what are some common strategies or tools you might use to find and fix errors in Python?",
+        "Describe a situation where you might use a Python set, and explain why it would be more suitable than a list in that context.",
+        "If you were asked to write a function that takes a list of strings and returns a new list containing only the strings that start with the letter 'A', how would you approach this task using Python?"
+    ]
+}

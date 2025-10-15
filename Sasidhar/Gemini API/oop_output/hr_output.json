@@ -1,0 +1,67 @@
+[
+    {
+        "communication_clarity": 10,
+        "problem_solving_approach": 10,
+        "teamwork_collaboration": 10,
+        "alignment_with_values": 10,
+        "feedback": "This is a very strong and well-structured response, effectively using the STAR method. You clearly demonstrated excellent facilitation, collaboration, and strategic problem-solving skills by focusing on project requirements and common goals to achieve team consensus.",
+        "overall": 10.0,
+        "question": "Describe a time you had to work on a group project during your studies or an internship where team members had different ideas or approaches. How did you contribute to finding a solution that everyone could agree on?",
+        "candidate_answer": "During a group project in my internship, we were tasked with developing a new feature for an existing application. Team members had different approaches\u2014some wanted to use a more complex solution, while others preferred a simpler, quicker implementation. To resolve this, I facilitated a discussion where everyone could present their ideas and the pros and cons of each approach. I encouraged collaboration by highlighting common goals and suggesting a compromise that incorporated elements of both ideas. By focusing on the project\u2019s requirements and potential impact, we found a solution that balanced efficiency with scalability, and everyone agreed on it.",
+        "debug": {
+            "analysis_time": 11.694733
+        }
+    },
+    {
+        "communication_clarity": 0,
+        "problem_solving_approach": 0,
+        "teamwork_collaboration": 0,
+        "alignment_with_values": 0,
+        "feedback": "The response \"bagunnava\" is a greeting in another language and does not address the interview question asked. To effectively answer behavioral questions, it's crucial to provide a specific example and detail your actions and the outcome using a structured method like STAR (Situation, Task, Action, Result) to demonstrate your skills. This would allow the interviewer to understand your thought process and approach to challenges.",
+        "overall": 0.0,
+        "question": "Tell me about a time you encountered an unexpected problem or challenge in an academic project or personal endeavor. What steps did you take to understand and overcome it?",
+        "candidate_answer": "bagunnava",
+        "debug": {
+            "analysis_time": 10.44377
+        }
+    },
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 9,
+        "teamwork_collaboration": 5,
+        "alignment_with_values": 10,
+        "feedback": "The candidate provided a clear and well-structured response, directly addressing the question with practical strategies. They effectively highlighted strong self-motivation, a commitment to quality, and a proactive, organized approach to tasks regardless of personal interest. To further enhance the answer, incorporating a brief, hypothetical example of a specific 'less interesting' task could make their strategies even more tangible.",
+        "overall": 8.2,
+        "question": "Imagine you're assigned a task that you find less interesting or engaging than others. How would you ensure you still put in your best effort and deliver high-quality work?",
+        "candidate_answer": "If I were assigned a task that seemed less interesting, I\u2019d focus on understanding its importance in the bigger picture and how it contributes to the overall goal. I\u2019d set clear, achievable milestones to stay motivated and keep track of progress. To maintain high quality, I\u2019d apply the same level of attention to detail as I would with a more exciting task, ensuring I complete it thoroughly. By maintaining a positive attitude and staying organized, I\u2019d make sure the work is done efficiently and to a high standard, even if it\u2019s not the most engaging.",
+        "debug": {
+            "analysis_time": 17.109457
+        }
+    },
+    {
+        "communication_clarity": 0,
+        "problem_solving_approach": 0,
+        "teamwork_collaboration": 0,
+        "alignment_with_values": 0,
+        "feedback": "The candidate's response offers no structured answer and completely avoids the question. This indicates a significant lack of preparation for behavioral questions and an inability to articulate past experiences demonstrating initiative or problem-solving. In future interviews, even if unsure, it's crucial to either ask for a moment to think or provide a brief example, however small, to show engagement.",
+        "overall": 0.0,
+        "question": "Describe a situation where you took the initiative to learn something new or improve a process, even if it wasn't explicitly asked of you (this could be for a school project, extracurricular activity, or personal learning). What was the outcome?",
+        "candidate_answer": "i am not sure",
+        "debug": {
+            "analysis_time": 9.223819
+        }
+    },
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 9,
+        "teamwork_collaboration": 9,
+        "alignment_with_values": 10,
+        "feedback": "This is a well-structured and thoughtful response, clearly outlining a proactive, step-by-step approach. The candidate effectively demonstrates strong soft skills such as empathy, root-cause analysis, collaboration, and clear communication, all focused on ensuring collective project success and maintaining quality.",
+        "overall": 9.2,
+        "question": "If you were working on a project with a tight deadline and realized that a teammate was struggling to complete their part, how would you approach the situation to ensure the project's success?",
+        "candidate_answer": "If I noticed a teammate struggling with their part of a project and the deadline was tight, I\u2019d first offer my help by asking if they need assistance or if there\u2019s anything specific they\u2019re stuck on. I\u2019d try to understand the root cause of the difficulty\u2014whether it's a lack of resources, time management issues, or technical challenges. If necessary, I\u2019d collaborate with them to solve the problem or take on some of their tasks to lighten their load. Communication is key, so I\u2019d also keep the team informed and ensure we adjust the plan if needed to meet the deadline without compromising quality.",
+        "debug": {
+            "analysis_time": 10.766282
+        }
+    }
+]

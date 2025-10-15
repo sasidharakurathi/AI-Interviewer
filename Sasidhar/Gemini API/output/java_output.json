@@ -1,0 +1,67 @@
+[
+    {
+        "technical_depth": 0,
+        "communication_clarity": 0,
+        "problem_solving": 0,
+        "job_relevance": 0,
+        "feedback": "The candidate's response \"adkasldjasd\" was completely unintelligible and did not address the interview question in any way. For future interviews, it's crucial to provide a coherent and relevant answer, even if it's a basic definition, to demonstrate understanding and communication skills. Please prepare clear explanations for fundamental concepts like OOP principles.",
+        "overall": 0.0,
+        "question": "Can you explain the core principles of Object-Oriented Programming (OOP) in Java and provide a simple real-world analogy for each principle (e.g., Encapsulation, Inheritance, Polymorphism, Abstraction)?",
+        "candidate_answer": "adkasldjasd",
+        "debug": {
+            "analysis_time": 6.207945
+        }
+    },
+    {
+        "technical_depth": 10,
+        "communication_clarity": 10,
+        "problem_solving": 10,
+        "job_relevance": 10,
+        "feedback": "The candidate provided an excellent and concise answer that perfectly addresses the problem. They correctly identified the use of `Collections.sort()` with a `Comparator` and impressively demonstrated knowledge of modern Java 8+ features by utilizing `Comparator.comparingInt(Student::getScore).reversed()`. This shows strong foundational knowledge of the Collections API and an ability to apply advanced, efficient solutions, which is outstanding for a fresher.",
+        "overall": 10.0,
+        "question": "Imagine you have a list of student objects, each with a 'score' attribute. How would you use Java's Collections API to sort this list in descending order of scores? Briefly explain the logic.",
+        "candidate_answer": "To sort a list of student objects by their score attribute in descending order using Java's Collections API, you can use the Collections.sort() method in combination with a custom Comparator. Specifically, you would create a Comparator that compares the students' scores in reverse order using Comparator.comparingInt(Student::getScore).reversed(). This ensures the list is sorted from highest to lowest score. Here's an example:Collections.sort(studentList, Comparator.comparingInt(Student::getScore).reversed());",
+        "debug": {
+            "analysis_time": 10.534371
+        }
+    },
+    {
+        "technical_depth": 0,
+        "communication_clarity": 0,
+        "problem_solving": 0,
+        "job_relevance": 0,
+        "feedback": "Thank you for your honesty. The `final` keyword is a fundamental concept in Java, essential for understanding immutability and controlling inheritance/overriding. For future interviews, I strongly recommend a thorough review of core Java concepts, including its applications with variables, methods, and classes, as this is basic expected knowledge for a Java Developer, even at a fresher level.",
+        "overall": 0.0,
+        "question": "Describe a situation where you might use the `final` keyword in Java. What are its different applications (e.g., with variables, methods, and classes)?",
+        "candidate_answer": "i am not aware of that",
+        "debug": {
+            "analysis_time": 8.612173
+        }
+    },
+    {
+        "technical_depth": 9,
+        "communication_clarity": 10,
+        "problem_solving": 9,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a perfectly correct and concise SQL query that accurately combined both filtering conditions using the `AND` operator. Their explanation was clear and demonstrated a solid understanding of basic SQL syntax for selecting and filtering data. For a fresher, this is an excellent and direct answer that fully addresses the question.",
+        "overall": 9.5,
+        "question": "What is a simple SQL query to retrieve all records from a table named 'Employees' where the 'department' is 'Sales'? How would you also filter for employees whose 'salary' is greater than 50000?",
+        "candidate_answer": "To retrieve all records from the Employees table where the department is 'Sales' and the salary is greater than 50,000, you can use the following SQL query:SELECT * FROM EmployeesWHERE department = 'Sales' AND salary > 50000;This query selects all columns (*) from the Employees table, filtering rows where the department is 'Sales' and the salary is greater than 50,000 using the AND operator.",
+        "debug": {
+            "analysis_time": 11.343539
+        }
+    },
+    {
+        "technical_depth": 0,
+        "communication_clarity": 0,
+        "problem_solving": 0,
+        "job_relevance": 0,
+        "feedback": "The provided answer 'oadkasdka' appears to be a string of random characters and is not understandable. As such, we cannot evaluate your technical understanding or communication skills based on this response. For future interviews, please ensure your answers are coherent and directly address the question asked, even if it's to state you don't know the answer.",
+        "overall": 0.0,
+        "question": "You are tasked with creating a small application that fetches data from a database and displays it. Without going into deep technical details, outline the basic steps you would take, considering the Java technologies mentioned (like Spring or Hibernate) and database interaction.",
+        "candidate_answer": "oadkasdka",
+        "debug": {
+            "analysis_time": 7.53482
+        }
+    }
+]

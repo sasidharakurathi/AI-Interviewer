@@ -1,0 +1,132 @@
+[
+    {
+        "technical_depth": 1,
+        "communication_clarity": 7,
+        "problem_solving": 0,
+        "job_relevance": 10,
+        "feedback": "The candidate correctly identified that both lists and tuples are used to store collections of items. However, their answer fundamentally misunderstands the core differences, particularly regarding mutability (lists are mutable, tuples are immutable) and their specific use cases. Understanding these distinct properties, which also influence performance and functionality, is crucial for effective Python development.",
+        "overall": 4.5,
+        "question": "Can you explain the difference between a list and a tuple in Python and when you might choose one over the other?",
+        "candidate_answer": "A Python list and a tuple are exactly the same. Both are used to store collections of items, and the only difference is that lists are always faster than tuples. You can use them interchangeably depending on what you prefer, as they have the same performance and functionality.",
+        "debug": {
+            "analysis_time": 14.069628
+        }
+    },
+    {
+        "technical_depth": 7,
+        "communication_clarity": 9,
+        "problem_solving": 6,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a clear and accurate explanation of OOP, defining classes, attributes, and methods well. They correctly identified and briefly described three of the four core OOP pillars (Encapsulation, Inheritance, Polymorphism). To further strengthen their understanding, they should ensure they can also articulate the concept of Abstraction as the fourth main pillar of OOP.",
+        "overall": 8.0,
+        "question": "Describe the concept of object-oriented programming (OOP) in Python. What are the four main pillars of OOP?",
+        "candidate_answer": "Object-oriented programming (OOP) in Python is a programming paradigm that organizes code into \"objects,\" which are instances of classes. A class defines the blueprint for an object, including its attributes (data) and methods (functions that operate on the data). OOP encourages modularity and reusability, allowing you to model real-world entities more effectively. Key concepts include encapsulation (bundling data and methods), inheritance (creating new classes from existing ones), and polymorphism (using methods in different ways across classes).",
+        "debug": {
+            "analysis_time": 18.37618
+        }
+    },
+    {
+        "technical_depth": 9,
+        "communication_clarity": 9,
+        "problem_solving": 8,
+        "job_relevance": 10,
+        "feedback": "The candidate provided an excellent and Pythonic solution by correctly identifying `collections.Counter` as the ideal tool for finding element frequencies, demonstrating good knowledge of the standard library. To make the answer even stronger, they could have briefly shown how to extract the most frequent number from the `Counter` object, for example, using its `most_common(1)` method.",
+        "overall": 9.0,
+        "question": "Given a list of numbers, how would you find the most frequent number using Python's built-in data structures?",
+        "candidate_answer": "You can find the most frequent number in a list using Python's built-in data structures with the help of collections.Counter, which makes it easy to count the occurrences of each element in the list.",
+        "debug": {
+            "analysis_time": 14.027181
+        }
+    },
+    {
+        "technical_depth": 6,
+        "communication_clarity": 7,
+        "problem_solving": 5,
+        "job_relevance": 10,
+        "feedback": "You provided a correct, foundational definition of a Python dictionary as a key-value pair data structure and accurately described the mechanism for storing data. To enhance your answer, you should provide a concrete code example that clearly demonstrates both storing *and retrieving* data, addressing the full scope of the question's request for usage.",
+        "overall": 7.0,
+        "question": "What is a dictionary in Python? Provide an example of how you would use it to store and retrieve data.",
+        "candidate_answer": "its a data strucute where the data is stored in key value pairs. we can store values in dictionary by mentioning key in subscripts and assign value to it.",
+        "debug": {
+            "analysis_time": 9.637752
+        }
+    },
+    {
+        "technical_depth": 7,
+        "communication_clarity": 8,
+        "problem_solving": 7,
+        "job_relevance": 10,
+        "feedback": "The candidate correctly identified the four basic CRUD operations. They also demonstrated a foundational understanding of how to select all records from a table, which is excellent for a fresher. To improve, ensure strict adherence to SQL syntax, writing `SELECT * FROM users;` instead of 'select star from users;'",
+        "overall": 8.0,
+        "question": "What are the basic CRUD operations in SQL? Can you write a simple MySQL query to select all records from a table named 'users'?",
+        "candidate_answer": "INSERT, SELECT, UPDATE and DELETE are the CRUD operations in SQL. select star from users;",
+        "debug": {
+            "analysis_time": 7.224216
+        }
+    },
+    {
+        "technical_depth": 9,
+        "communication_clarity": 7,
+        "problem_solving": 8,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a strong foundational answer, correctly identifying the purpose of JOIN clauses and accurately distinguishing between INNER and LEFT JOINs, which is excellent for a fresher. To enhance their response, they could strive for slightly more precise terminology (e.g., 'matching rows based on a condition' instead of 'similar entries') and briefly mention the concept of the 'ON' clause which specifies the join condition. A minor review of grammar would also be beneficial.",
+        "overall": 8.5,
+        "question": "Explain the purpose of JOIN clauses in SQL. What is the difference between an INNER JOIN and a LEFT JOIN?",
+        "candidate_answer": "to combine two or more table's entried we use JOIN clauses and INNER JOIN will pick out the similar entries of both tables and LEFT JOIN will pick out the entire left side table and similar entries of both tables",
+        "debug": {
+            "analysis_time": 16.032028
+        }
+    },
+    {
+        "technical_depth": 8,
+        "communication_clarity": 7,
+        "problem_solving": 7,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a correct definition of Git, its primary purpose, and confirmed practical experience by listing several core commands. This demonstrates a solid foundational understanding for a fresher. To improve, they could elaborate slightly more on the 'why' Git is important (e.g., collaboration, detailed history, reverting changes) and perhaps provide a brief context for when each command is used.",
+        "overall": 8.0,
+        "question": "What is Git, and why is it important for software development? Have you used Git before? If so, what are some basic commands you've used?",
+        "candidate_answer": "git is a version control system. it is used to manage the previous versions of the project. yes, i have used git before and the basic commands like push pull commit add stage checkout",
+        "debug": {
+            "analysis_time": 11.021929
+        }
+    },
+    {
+        "technical_depth": 7,
+        "communication_clarity": 8,
+        "problem_solving": 7,
+        "job_relevance": 10,
+        "feedback": "The candidate correctly identified the Python membership operator as the solution, demonstrating a good grasp of fundamental Python syntax. To provide a more comprehensive answer, it would be beneficial to briefly mention the operator itself (e.g., '`in` operator') and discuss its efficiency characteristics for lists, or suggest alternatives like converting to a set for faster lookups when appropriate.",
+        "overall": 8.0,
+        "question": "Imagine you have a large list of numbers. How would you efficiently check if a specific number exists within that list?",
+        "candidate_answer": "i will use python's membership operator",
+        "debug": {
+            "analysis_time": 16.865548
+        }
+    },
+    {
+        "technical_depth": 8,
+        "communication_clarity": 9,
+        "problem_solving": 7,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a clear and accurate definition of an API, correctly identified its role in providing services using HTTP methods, and gave relevant Python framework examples (Flask, Django). For a fresher, this demonstrates a strong foundational understanding. To further enhance the answer, the candidate could briefly elaborate on the benefits of APIs, such as modularity or enabling different frontends, and mention common data formats like JSON.",
+        "overall": 8.5,
+        "question": "What is the role of an API in backend development? How might a Python backend communicate with a frontend?",
+        "candidate_answer": "API stands for Application Programming Interface. it is used to provide services to the other application like providing http requests like get, post, put ,delete etc. we can use python's flask module or django module to create api's and communicate with a frontend",
+        "debug": {
+            "analysis_time": 13.343214
+        }
+    },
+    {
+        "technical_depth": 5,
+        "communication_clarity": 4,
+        "problem_solving": 5,
+        "job_relevance": 10,
+        "feedback": "You correctly identified the `logging` module as a professional tool for gaining insights into code behavior, which is valuable for debugging. To enhance your answer, consider clearly distinguishing between error handling (gracefully managing expected failures) and debugging (actively investigating and finding the root cause of unexpected issues). Additionally, mentioning other common debugging techniques like `print()` statements or using an IDE debugger would strengthen your response, and focusing on grammar and spelling will improve your communication.",
+        "overall": 6.0,
+        "question": "If you encountered a bug in your Python code, what steps would you typically take to debug it?",
+        "candidate_answer": "initially i will try to use exception handling to handle any type of errors which may raised by the code. then i will try to use logger module to log the data where ever an error may occur. using this logged date we  can debug what is causing the error or bug in the code",
+        "debug": {
+            "analysis_time": 16.53242
+        }
+    }
+]

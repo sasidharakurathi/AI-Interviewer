@@ -1,0 +1,67 @@
+[
+    {
+        "technical_depth": 7,
+        "communication_clarity": 9,
+        "problem_solving": 5,
+        "job_relevance": 10,
+        "feedback": "The candidate provided accurate and concise definitions for all four core OOP principles, demonstrating a strong theoretical understanding for a fresher. To improve, they should practice translating these concepts into simple code examples, as a basic code snippet was explicitly requested and would showcase practical application beyond theoretical knowledge.",
+        "overall": 7.8,
+        "question": "Explain the core principles of Object-Oriented Programming (OOP) in Java (e.g., Encapsulation, Inheritance, Polymorphism, Abstraction) and provide a simple code example for one of them.",
+        "candidate_answer": "Object-Oriented Programming (OOP) in Java is based on four core principles:Encapsulation: This involves bundling data (variables) and methods (functions) that operate on the data into a single unit, called a class. It also hides the internal details of the object by making variables private and providing public getter and setter methods.Inheritance: Inheritance allows a new class to inherit properties and behaviors (fields and methods) from an existing class. It promotes code reuse and establishes a relationship between parent and child classes.Polymorphism: Polymorphism allows one interface to be used for different types of objects. It includes method overriding and method overloading, enabling objects to behave in multiple ways depending on their class.Abstraction: Abstraction hides the complex implementation details and shows only the necessary features. This can be achieved using abstract classes and interfaces.",
+        "debug": {
+            "analysis_time": 10.508008
+        }
+    },
+    {
+        "technical_depth": 9,
+        "communication_clarity": 10,
+        "problem_solving": 10,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a comprehensive and accurate explanation of Java Strings, their immutability, and the performance implications of concatenation, which is excellent for a fresher. They not only defined concepts but also correctly identified key benefits (security, synchronization, caching) and proposed appropriate solutions. To further impress in future discussions, they could briefly touch upon the String pool and its interaction with immutable strings.",
+        "overall": 9.8,
+        "question": "Describe what a 'String' is in Java and why it's immutable. What are the potential performance implications of repeatedly concatenating Strings in a loop?",
+        "candidate_answer": "In Java, a String is a sequence of characters, and it is immutable, meaning once created, its value cannot be changed. If you modify a String, a new String object is created instead of altering the original. This immutability helps with security, synchronization, and caching. Repeatedly concatenating Strings in a loop can be inefficient because each concatenation creates a new String object, leading to unnecessary memory usage and performance overhead. To avoid this, it's better to use StringBuilder or StringBuffer, which allow for mutable strings and are more efficient for frequent modifications.",
+        "debug": {
+            "analysis_time": 14.389787
+        }
+    },
+    {
+        "technical_depth": 0,
+        "communication_clarity": 0,
+        "problem_solving": 0,
+        "job_relevance": 0,
+        "feedback": "The candidate's answer 'boom boom' was completely nonsensical and did not address any part of the question. For a fresher, we would expect at least a basic, textbook definition of Spring Boot and one of its benefits. The candidate should focus on providing relevant and coherent answers, even if brief, to demonstrate basic knowledge.",
+        "overall": 0.0,
+        "question": "Imagine you've completed an academic project using Spring Boot. Can you briefly describe what Spring Boot is and one of its key benefits for a Java developer?",
+        "candidate_answer": "boom boom",
+        "debug": {
+            "analysis_time": 4.891546
+        }
+    },
+    {
+        "technical_depth": 10,
+        "communication_clarity": 10,
+        "problem_solving": 10,
+        "job_relevance": 10,
+        "feedback": "The candidate provided a perfectly correct and concise SQL query that directly addresses the problem. Their explanation of the query's functionality was also clear and accurate. This demonstrates an excellent foundational understanding of basic SQL for a fresher.",
+        "overall": 10.0,
+        "question": "Given your understanding of basic SQL, how would you retrieve all employees from an 'employees' table whose salary is greater than $50,000 and who are in the 'Sales' department?",
+        "candidate_answer": "To retrieve all employees from an employees table whose salary is greater than $50,000 and who are in the 'Sales' department, you would use the following SQL query:SELECT * FROM employees WHERE salary > 50000 AND department = 'Sales';This query selects all columns from the employees table, filtering rows where the salary is greater than $50,000 and the department is 'Sales'.",
+        "debug": {
+            "analysis_time": 6.796792
+        }
+    },
+    {
+        "technical_depth": 0,
+        "communication_clarity": 0,
+        "problem_solving": 0,
+        "job_relevance": 0,
+        "feedback": "The candidate explicitly stated they are not aware of the topic, which demonstrates a significant gap in a fundamental skill for any Java developer, even a fresher. While honesty is appreciated, understanding basic debugging concepts and tools (like using an IDE debugger or reading stack traces) is a baseline expectation for someone entering a development role. I recommend dedicating time to learn about debugging methodologies and common tools used in Java development.",
+        "overall": 0.0,
+        "question": "You're working on a feature and encounter a bug. Describe your general approach to debugging and troubleshooting a Java application, from identifying the problem to verifying the fix.",
+        "candidate_answer": "i am not aware of that",
+        "debug": {
+            "analysis_time": 5.334925
+        }
+    }
+]

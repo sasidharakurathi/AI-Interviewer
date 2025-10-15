@@ -1,0 +1,69 @@
+[
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 10,
+        "teamwork_collaboration": 0,
+        "alignment_with_values": 10,
+        "feedback": "The candidate provided a clear and structured response, effectively detailing their problem-solving approach to a technical challenge. They demonstrated strong ownership and a learning mindset, which are valuable professional qualities. To enhance their response, they could have incorporated aspects of collaboration or how they communicated their challenges and solutions if it was a team project, further showcasing interpersonal skills.",
+        "overall": 7.2,
+        "question": "Tell me about a challenging academic project you worked on. What was the biggest obstacle you faced, and how did you overcome it?",
+        "candidate_answer": "In one of my academic projects, I worked on developing a machine learning model to predict housing prices. The biggest challenge I faced was dealing with incomplete and noisy data, which affected the model\u2019s accuracy. To overcome this, I spent time cleaning and preprocessing the data by filling missing values, removing outliers, and normalizing the features. I also experimented with different algorithms and fine-tuned hyperparameters, which eventually improved the model\u2019s performance. It was a great learning experience in data cleaning and model optimization.",
+        "debug": {
+            "analysis_time": 8.995514
+        }
+    },
+    {
+        "communication_clarity": 0,
+        "problem_solving_approach": 0,
+        "teamwork_collaboration": 0,
+        "alignment_with_values": 0,
+        "feedback": "The provided response was unintelligible, making it impossible to assess the candidate's communication clarity, thought process, or the specific soft skills they intended to demonstrate. To effectively answer behavioral questions, candidates should structure their responses using a method like STAR (Situation, Task, Action, Result) to clearly articulate their experience and contributions.",
+        "overall": 0.0,
+        "question": "Describe a situation where you had to work with a team to achieve a common goal. What was your role, and how did you contribute to the team's success?",
+        "candidate_answer": "bola bla boom oasoa oadjasd",
+        "debug": {
+            "analysis_time": 7.148925
+        }
+    },
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 10,
+        "teamwork_collaboration": 9,
+        "alignment_with_values": 10,
+        "feedback": "This is an excellent response that clearly outlines a structured and proactive approach to learning new tasks. The candidate demonstrates strong soft skills, including resourcefulness, organization, and a valuable openness to collaboration and feedback. It effectively communicates a continuous learning mindset.",
+        "overall": 9.5,
+        "question": "Imagine you're assigned a task you've never done before. What steps would you take to learn and complete it effectively?",
+        "candidate_answer": "If I were assigned a task I\u2019ve never done before, I\u2019d start by breaking it down into smaller, manageable steps. First, I\u2019d gather any relevant resources\u2014researching online, reading documentation, or asking for advice from more experienced colleagues. I\u2019d then identify the specific skills or tools I need to learn and prioritize them. After that, I\u2019d set a timeline with milestones to track my progress and stay organized. While working on the task, I\u2019d regularly check in with others for feedback, adjusting my approach as needed. Once I\u2019ve completed the task, I\u2019d reflect on what I learned for future reference.",
+        "debug": {
+            "analysis_time": 9.204041
+        }
+    },
+    {
+        "scores": {
+            "communication_clarity": 0,
+            "problem_solving_approach": 0,
+            "teamwork_collaboration": 0,
+            "alignment_with_values": 0
+        },
+        "feedback": "This response indicates a significant lack of preparedness for behavioral questions. It provides no insight into your problem-solving approach, your ability to collaborate, or your understanding of workplace dynamics. For future interviews, it's crucial to prepare by thinking through common workplace scenarios and outlining potential actions and outcomes.",
+        "overall": 0.0,
+        "question": "If you see a colleague struggling with their work, what would you do?",
+        "candidate_answer": "i do not know",
+        "debug": {
+            "analysis_time": 10.038331
+        }
+    },
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 8,
+        "teamwork_collaboration": 7,
+        "alignment_with_values": 9,
+        "feedback": "This is a well-structured and enthusiastic response that directly addresses both parts of the question. The candidate clearly communicates their passion for Python's versatility and problem-solving, backed by a strong commitment to continuous learning through personal projects, coding challenges, and open-source contributions. To further enhance this excellent answer, consider adding a brief example of a specific learning or achievement from one of these self-directed activities, especially regarding open-source contributions to highlight collaboration.",
+        "overall": 8.2,
+        "question": "What interests you most about becoming a Python Developer, and what are you doing outside of formal learning to deepen your understanding?",
+        "candidate_answer": "What excites me most about becoming a Python Developer is the versatility of the language\u2014it\u2019s used in everything from web development to data science and machine learning, so there's always something new to explore. I enjoy the problem-solving aspect of coding and the fact that Python makes complex tasks simpler with its readability and extensive libraries. Outside of formal learning, I regularly work on personal projects, like building small web apps or experimenting with data analysis using libraries like Pandas and NumPy. I also participate in coding challenges and contribute to open-source projects to sharpen my skills and learn from others.",
+        "debug": {
+            "analysis_time": 11.444657
+        }
+    }
+]
