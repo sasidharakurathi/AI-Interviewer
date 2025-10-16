@@ -81,6 +81,10 @@ CANDIDATE_EXPERIENCE = "Fresher (0-1 years)"
 # CANDIDATE_EXPERIENCE = "Senior (5+ years)"
 
 
+TECHNICAL_OUTPUT_PATH = "./output/technical_output.json"
+TECHNICAL_QUESTIONS_PATH = "./output/technical_questions.json"
+
+
 
 def parse_json_response(response_text):
     """JSON Parser"""
@@ -202,7 +206,7 @@ def start_ai_interview():
         question_data = parse_json_response(response.text)
         
         # # --- Debug ---
-        # with open("./output/questions.json" , "w") as fp:
+        # with open(TECHNICAL_QUESTIONS_PATH , "w") as fp:
         #     json.dump(question_data, fp, indent=4)
         #     return
         # # --- Debug ---
@@ -245,7 +249,7 @@ def start_ai_interview():
 
     print("\nAI Interviewer: Thank you for your time. That concludes the interview.")
 
-    with open("./output/output.json", "w") as fp:
+    with open(TECHNICAL_OUTPUT_PATH, "w") as fp:
         json.dump(total_analysis, fp, indent=4)
 
     print("\nAnalysis Report Saved to output.json.")

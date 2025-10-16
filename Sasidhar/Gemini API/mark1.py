@@ -1,4 +1,4 @@
-# In this version, we are calling gemini api for generation every single question.
+# In this version, we are calling gemini api for generation of every single question.
 # Advantage: previous question and answer context is provided for next question.
 # Disadvantage: More API Calls
 
@@ -50,6 +50,8 @@ JOB_DESCRIPTION = """
 # CANDIDATE_EXPERIENCE = "Mid-Level (2-5 years)"
 CANDIDATE_EXPERIENCE = "Senior (5+ years)"
 
+
+TECHNICAL_OUTPUT_PATH = "./output/technical_output.json"
 
 
 def parse_json_response(response_text):
@@ -208,7 +210,7 @@ def start_ai_interview():
     print("\nAI Interviewer: Thank you for your time. That concludes the interview.")
     
     # save total analysis into output.json
-    with open("./output/output.json", "w") as fp:
+    with open(TECHNICAL_OUTPUT_PATH, "w") as fp:
         json.dump(total_analysis, fp, indent=4)
     
     print("\n Analysis Report Saved.")

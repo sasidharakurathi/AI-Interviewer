@@ -19,6 +19,9 @@ CANDIDATE_EXPERIENCE = "Fresher (0-1 years)"
 # CANDIDATE_EXPERIENCE = "Mid-Level (2-5 years)"
 # CANDIDATE_EXPERIENCE = "Senior (5+ years)"
 
+HR_OUTPUT_PATH = "./output/hr_output.json"
+HR_QUESTIONS_PATH = "./output/hr_questions.json"
+
 
 def parse_json_response(response_text):
     """JSON Parser"""
@@ -122,7 +125,7 @@ def start_ai_hr_interview():
         question_data = parse_json_response(response.text)
         
         # # --- Debug ---
-        # with open("./output/hr_questions.json" , "w") as fp:
+        # with open(HR_QUESTIONS_PATH , "w") as fp:
         #     json.dump(question_data, fp, indent=4)
         #     return
         # # --- Debug ---
@@ -158,7 +161,7 @@ def start_ai_hr_interview():
 
     print("\nAI Interviewer: Thank you for your time. That concludes the interview.")
 
-    with open("./output/hr_output.json", "w") as fp:
+    with open(HR_OUTPUT_PATH, "w") as fp:
         json.dump(total_analysis, fp, indent=4)
 
     print("\nHR Analysis Report Saved to hr_output.json.")

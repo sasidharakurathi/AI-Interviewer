@@ -1,4 +1,20 @@
 # Sasidhar
+--extra-index-url https://download.pytorch.org/whl/cu118  # Comment this out if you are using torch-cpu
+
+# Load .env
+python-dotenv
+
+# LLM for Interview Question Generation and Candidate answer analylsis
 ollama
 google-generativeai
-python-dotenv
+
+# PyTorch
+torch
+torchvision
+torchaudio
+
+# Speech-to-Text
+openai-whisper # it requires the command-line tool "ffmpeg" to be installed on your system
+
+
+

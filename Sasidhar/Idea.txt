@@ -1,0 +1,74 @@
+
+Problem Statement:
+    To, develop an "AI interviewer" with two main user roles 1. Candidate and 2. Recruiter.
+
+Core Features:
+    Candidate Features:
+        1. Interactive video interview interface with camera and microphone access.
+        2. Real-time speech-to-text and text-to-speech conversion.
+        3. Comprehensive interview feedback and history.
+        4. Profile management.
+
+    Recruiter Features:
+        1. Custom interview creation based on the job descriptions.
+        2. Live Interview monitoring.
+        3. Detailed candidate anaylsis dashboard.
+        4. Detailed reports with conversasion transcripts.
+        5. Question customiaztion and interview management.
+
+
+Technologies:
+    1. "WebRTC" implementaion for video streaming.
+    2. "Django Channels" for WebSocket signaling and real-time updates.
+    3. "OpenCV + DeepFace" for computer vision. (to detect cheating etc.)
+    4. "Ollama LLM" for question generations and response analysis. 
+    5. "Whisper/SpeechRecognition" for speech processing.
+    6. "Ffmpeg" for Audio or Video processing.
+
+Open Source (Free) Technologies:
+    1. LLM                      - Ollama's Llama 3.2 3B (Local)
+    2. Speech-to-Text           - OpenAI Whisper (Local)
+    3. Text-to-Speech           - pyttsx3 and gTTS.
+    4. Computer Vision          - OpenCV + DeepFace (DeepFace with VGG-Face)
+    5. Video Communication      - WebRTC + Django Channels
+    6. Database                 - MySQL
+
+Resources:
+
+    Django Channels:
+        https://channels.readthedocs.io/en/latest/index.html
+
+    Ollama Python Module:
+        https://github.com/ollama/ollama-python
+    
+    OpenCV Python Module:
+        https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+
+    DeepFace Python Module:
+        https://github.com/serengil/deepface
+        https://viso.ai/computer-vision/deepface/
+
+    Whisper/SpeechRecognition:
+        https://pypi.org/project/SpeechRecognition/
+        https://www.geeksforgeeks.org/machine-learning/python-speech-recognition-module/
+        https://platform.openai.com/docs/guides/speech-to-text
+        https://github.com/openai/whisper#available-models-and-languages
+    
+    pyttsx3 & gTTS:
+        https://pypi.org/project/pyttsx3/
+        https://pyttsx3.readthedocs.io/en/latest/
+        https://pypi.org/project/gTTS/
+        https://gtts.readthedocs.io/en/latest/
+    
+    WebRTC:
+        https://webrtc.org/getting-started/overview
+
+
+    Django Tailwind Css:
+        https://django-tailwind.readthedocs.io/en/latest/installation.html
+    
+    Ffmpeg:
+        https://ffmpeg.org/download.html
+
+    
+    https://github.com/manthan89-py/AI-Interview-System

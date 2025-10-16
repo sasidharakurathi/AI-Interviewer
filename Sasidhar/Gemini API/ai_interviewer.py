@@ -27,6 +27,9 @@ class Interviewer:
         
         self.questions_model = genai.GenerativeModel(self.model_for_questions) # question generation model object
         self.analysis_model = genai.GenerativeModel(self.model_for_analysis) # analysis model object
+        
+        self.technical_questions_path = os.environ.get("TECHNICAL_QUESTIONS_PATH")
+        self.hr_questions_path = os.environ.get("HR_QUESTIONS_PATH")
     
     def parse_json_response(self, response_text):
         """JSON Parser"""
@@ -149,7 +152,7 @@ class TechnicalInterviewer(Interviewer):
             question_data = self.parse_json_response(response.text)
             
             # # --- Debug ---
-            # with open("./output/questions.json" , "w") as fp:
+            # with open(self.technical_questions_path , "w") as fp:
             #     json.dump(question_data, fp, indent=4)
             #     return
             # # --- Debug ---
@@ -258,7 +261,7 @@ class HRInterviewer(Interviewer):
             question_data = self.parse_json_response(response.text)
             
             # # --- Debug ---
-            # with open("./output/hr_questions.json" , "w") as fp:
+            # with open(self.hr_questions_path , "w") as fp:
             #     json.dump(question_data, fp, indent=4)
             #     return
             # # --- Debug ---
@@ -279,6 +282,9 @@ class HRInterviewer(Interviewer):
             return None
         
 def start_ai_technical_interview(job_role, job_description, candidate_experience, max_questions=5):
+    
+    technical_output_path = os.environ.get("TECHNICAL_OUTPUT_PATH")
+    
     technical_interviewer = TechnicalInterviewer(job_role, job_description, candidate_experience, max_questions)
     questions_list = technical_interviewer.generate_questions()
     
@@ -310,12 +316,14 @@ def start_ai_technical_interview(job_role, job_description, candidate_experience
 
     print("\nAI Interviewer: Thank you for your time. That concludes the interview.")
 
-    with open("./oop_output/technical_output.json", "w") as fp:
+    with open(technical_output_path, "w") as fp:
         json.dump(total_analysis, fp, indent=4)
 
-    print("\nAnalysis Report Saved to technical_output.json.")        
+    print(f"\nAnalysis Report Saved to {technical_output_path}.")        
 
 def start_ai_hr_interview(job_role, job_description, candidate_experience, max_questions=5):
+    
+    hr_output_path = os.environ.get("HR_OUTPUT_PATH")
     
     hr_interviewer = HRInterviewer(job_role, job_description, candidate_experience, max_questions)
     questions_list = hr_interviewer.generate_questions()
@@ -338,73 +346,73 @@ def start_ai_hr_interview(job_role, job_description, candidate_experience, max_q
 
     print("\nAI Interviewer: Thank you for your time. That concludes the interview.")
 
-    with open("./oop_output/hr_output.json", "w") as fp:
+    with open(hr_output_path, "w") as fp:
         json.dump(total_analysis, fp, indent=4)
 
-    print("\nHR Analysis Report Saved to hr_output.json.")
+    print(f"\nHR Analysis Report Saved to {hr_output_path}.")
 
 
 if __name__ == "__main__":
     
-    MAX_QUESTIONS = 5
-    # JOB_ROLE = "Python Developer"
-    # JOB_DESCRIPTION = """
-    #     Position: Python Developer
-    #     Location: Vijayawada, India
-    #     Type: Full-Time | Entry-Level
-
-    #     Role Overview
-    #     Join our team as a Python Developer and launch your backend development career! We're seeking a motivated and curious fresher ready to dive into building scalable, data-driven applications. This role is ideal for someone who enjoys working with Python's core data structures and has a basic familiarity with MySQL.
-
-    #     Primary Responsibilities
-    #     - Develop, test, and manage backend systems in Python, leveraging clean and efficient data structures
-    #     - Write and optimize MySQL queries for seamless CRUD operations
-    #     - Work closely with frontend teams to integrate APIs and enable continuous data exchange
-    #     - Debug, refactor, and enhance backend code for optimal reliability and performance
-    #     - Contribute to documentation and participate in deployment activities
-
-    #     Key Skills & Qualifications
-    #     - Strong grasp of Python basics: lists, dictionaries, tuples, sets, and object-oriented programming
-    #     - Hands-on experience with basic MySQL queries, joins, and indexing strategies
-    #     - Exposure to version control systems (preferably Git)
-    #     - Analytical mindset with good problem-solving and algorithmic thinking skills
-
-    #     What You'll Gain
-    #     - Mentoring by experienced senior developers
-    #     - Opportunities to work on real-world projects and grow your professional portfolio
-    #     - Supportive, collaborative work environment
-    #     - Pathways to advance into full-stack development and beyond
-    # """
-
-    JOB_ROLE = "Java Developer"
+    MAX_QUESTIONS = 1
+    JOB_ROLE = "Python Developer"
     JOB_DESCRIPTION = """
-        Java Developer
-        Location: Vijayawada
+        Position: Python Developer
+        Location: Vijayawada, India
+        Type: Full-Time | Entry-Level
 
-        Employment Type: Full-Time
+        Role Overview
+        Join our team as a Python Developer and launch your backend development career! We're seeking a motivated and curious fresher ready to dive into building scalable, data-driven applications. This role is ideal for someone who enjoys working with Python's core data structures and has a basic familiarity with MySQL.
 
-        Job Overview
-        We are seeking a passionate and detail-oriented Java Developer Fresher to join our software development team. You will work on building scalable and efficient Java-based applications, collaborating with senior developers and learning the full software development lifecycle.
+        Primary Responsibilities
+        - Develop, test, and manage backend systems in Python, leveraging clean and efficient data structures
+        - Write and optimize MySQL queries for seamless CRUD operations
+        - Work closely with frontend teams to integrate APIs and enable continuous data exchange
+        - Debug, refactor, and enhance backend code for optimal reliability and performance
+        - Contribute to documentation and participate in deployment activities
 
-        Key Responsibilities
-        Assist in designing, developing, and maintaining Java applications.
-        Write clean, efficient, and testable code using Java and related technologies.
-        Participate in debugging, testing, and documenting software components.
-        Collaborate with cross-functional teams to deliver high-quality solutions.
-        Learn and apply best practices in software engineering and agile development.
-        
-        Required Skills
-        Strong understanding of Core Java, OOP concepts, and basic data structures.
-        Familiarity with Java frameworks like Spring or Hibernate (academic/project exposure is fine).
-        Basic knowledge of SQL and relational databases.
-        Exposure to HTML, CSS, JavaScript is a plus.
-        Good problem-solving and communication skills.
-        Ability to work in a team and adapt to new technologies.
-        
-        Educational Qualification
-        Bachelor's degree in Computer Science, Information Technology, or related field.
-        Final-year students or recent graduates with relevant academic projects are encouraged to apply.
+        Key Skills & Qualifications
+        - Strong grasp of Python basics: lists, dictionaries, tuples, sets, and object-oriented programming
+        - Hands-on experience with basic MySQL queries, joins, and indexing strategies
+        - Exposure to version control systems (preferably Git)
+        - Analytical mindset with good problem-solving and algorithmic thinking skills
+
+        What You'll Gain
+        - Mentoring by experienced senior developers
+        - Opportunities to work on real-world projects and grow your professional portfolio
+        - Supportive, collaborative work environment
+        - Pathways to advance into full-stack development and beyond
     """
+
+    # JOB_ROLE = "Java Developer"
+    # JOB_DESCRIPTION = """
+    #     Java Developer
+    #     Location: Vijayawada
+
+    #     Employment Type: Full-Time
+
+    #     Job Overview
+    #     We are seeking a passionate and detail-oriented Java Developer Fresher to join our software development team. You will work on building scalable and efficient Java-based applications, collaborating with senior developers and learning the full software development lifecycle.
+
+    #     Key Responsibilities
+    #     Assist in designing, developing, and maintaining Java applications.
+    #     Write clean, efficient, and testable code using Java and related technologies.
+    #     Participate in debugging, testing, and documenting software components.
+    #     Collaborate with cross-functional teams to deliver high-quality solutions.
+    #     Learn and apply best practices in software engineering and agile development.
+        
+    #     Required Skills
+    #     Strong understanding of Core Java, OOP concepts, and basic data structures.
+    #     Familiarity with Java frameworks like Spring or Hibernate (academic/project exposure is fine).
+    #     Basic knowledge of SQL and relational databases.
+    #     Exposure to HTML, CSS, JavaScript is a plus.
+    #     Good problem-solving and communication skills.
+    #     Ability to work in a team and adapt to new technologies.
+        
+    #     Educational Qualification
+    #     Bachelor's degree in Computer Science, Information Technology, or related field.
+    #     Final-year students or recent graduates with relevant academic projects are encouraged to apply.
+    # """
 
     CANDIDATE_EXPERIENCE = "Fresher (0-1 years)" 
     # CANDIDATE_EXPERIENCE = "Mid-Level (2-5 years)"
@@ -416,6 +424,6 @@ if __name__ == "__main__":
     print("\nStarting HR Interview: \n")
     start_ai_hr_interview(JOB_ROLE, JOB_DESCRIPTION, CANDIDATE_EXPERIENCE, MAX_QUESTIONS)
     
-    print("\nEnd of Interview...")
+    print("\nEnd of Interview...\n")
     
     

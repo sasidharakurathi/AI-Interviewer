@@ -1,15 +1,15 @@
 [
     {
-        "communication_clarity": 10,
-        "problem_solving_approach": 10,
-        "teamwork_collaboration": 10,
-        "alignment_with_values": 10,
-        "feedback": "This is a very strong and well-structured response, effectively using the STAR method. You clearly demonstrated excellent facilitation, collaboration, and strategic problem-solving skills by focusing on project requirements and common goals to achieve team consensus.",
-        "overall": 10.0,
-        "question": "Describe a time you had to work on a group project during your studies or an internship where team members had different ideas or approaches. How did you contribute to finding a solution that everyone could agree on?",
-        "candidate_answer": "During a group project in my internship, we were tasked with developing a new feature for an existing application. Team members had different approaches\u2014some wanted to use a more complex solution, while others preferred a simpler, quicker implementation. To resolve this, I facilitated a discussion where everyone could present their ideas and the pros and cons of each approach. I encouraged collaboration by highlighting common goals and suggesting a compromise that incorporated elements of both ideas. By focusing on the project\u2019s requirements and potential impact, we found a solution that balanced efficiency with scalability, and everyone agreed on it.",
+        "communication_clarity": 0,
+        "problem_solving_approach": 0,
+        "teamwork_collaboration": 0,
+        "alignment_with_values": 0,
+        "feedback": "The response provided appears to be a string of random characters and does not address the interview question. As a result, it is impossible to evaluate the candidate's communication clarity, problem-solving approach, teamwork skills, or alignment with professional values. To improve, the candidate should structure their answer using a method like STAR (Situation, Task, Action, Result) to provide a clear and relevant example.",
+        "overall": 0.0,
+        "question": "Describe a time you worked on an academic or personal project in a team. What was your role, and how did you ensure everyone's contributions were valued and integrated?",
+        "candidate_answer": "sdjaksldj",
         "debug": {
-            "analysis_time": 11.694733
+            "analysis_time": 4.951616
         }
     },
     {
@@ -17,25 +17,38 @@
         "problem_solving_approach": 0,
         "teamwork_collaboration": 0,
         "alignment_with_values": 0,
-        "feedback": "The response \"bagunnava\" is a greeting in another language and does not address the interview question asked. To effectively answer behavioral questions, it's crucial to provide a specific example and detail your actions and the outcome using a structured method like STAR (Situation, Task, Action, Result) to demonstrate your skills. This would allow the interviewer to understand your thought process and approach to challenges.",
+        "feedback": "The candidate's response, 'ship', is a single word and does not address the interview question in any meaningful way. It completely lacks structure, clarity, and fails to demonstrate any problem-solving approach or soft skills expected in a professional context. To improve, the candidate needs to provide a detailed, structured answer outlining their thought process and specific actions, ideally using a method like STAR.",
         "overall": 0.0,
-        "question": "Tell me about a time you encountered an unexpected problem or challenge in an academic project or personal endeavor. What steps did you take to understand and overcome it?",
-        "candidate_answer": "bagunnava",
+        "question": "Imagine you're working on a Python script and you encounter an error that you've never seen before and can't immediately solve. What steps would you take to troubleshoot and resolve it?",
+        "candidate_answer": "ship",
         "debug": {
-            "analysis_time": 10.44377
+            "analysis_time": 4.458662
         }
     },
     {
         "communication_clarity": 9,
-        "problem_solving_approach": 9,
-        "teamwork_collaboration": 5,
+        "problem_solving_approach": 6,
+        "teamwork_collaboration": 8,
         "alignment_with_values": 10,
-        "feedback": "The candidate provided a clear and well-structured response, directly addressing the question with practical strategies. They effectively highlighted strong self-motivation, a commitment to quality, and a proactive, organized approach to tasks regardless of personal interest. To further enhance the answer, incorporating a brief, hypothetical example of a specific 'less interesting' task could make their strategies even more tangible.",
+        "feedback": "The candidate's response is very clear and well-structured, effectively identifying key qualities and broadly outlining how they demonstrate them. To further strengthen the answer, the candidate could incorporate brief, specific examples for each quality, utilizing the STAR method. This would provide concrete evidence of their skills in action rather than just describing their general approach.",
         "overall": 8.2,
-        "question": "Imagine you're assigned a task that you find less interesting or engaging than others. How would you ensure you still put in your best effort and deliver high-quality work?",
-        "candidate_answer": "If I were assigned a task that seemed less interesting, I\u2019d focus on understanding its importance in the bigger picture and how it contributes to the overall goal. I\u2019d set clear, achievable milestones to stay motivated and keep track of progress. To maintain high quality, I\u2019d apply the same level of attention to detail as I would with a more exciting task, ensuring I complete it thoroughly. By maintaining a positive attitude and staying organized, I\u2019d make sure the work is done efficiently and to a high standard, even if it\u2019s not the most engaging.",
+        "question": "As a fresher, what do you believe are the most important qualities a developer needs to possess, and how do you demonstrate those qualities in your work?",
+        "candidate_answer": "As a fresher, the most important qualities a developer should possess are curiosity, problem-solving skills, adaptability, and communication. Curiosity drives you to continuously learn and stay updated with new technologies. Problem-solving skills help you break down complex issues and find efficient solutions. Adaptability is crucial because technology evolves rapidly, and being open to change helps you thrive in a dynamic environment. Communication, both written and verbal, is vital to collaborate effectively with team members and explain complex concepts clearly. You can demonstrate these qualities by regularly exploring new tools and technologies, approaching coding challenges with a methodical mindset, being open to feedback, and actively participating in discussions and team projects. Showing initiative to learn and improve is key, even when you're just starting out.",
         "debug": {
-            "analysis_time": 17.109457
+            "analysis_time": 10.366641
+        }
+    },
+    {
+        "communication_clarity": 9,
+        "problem_solving_approach": 10,
+        "teamwork_collaboration": 7,
+        "alignment_with_values": 10,
+        "feedback": "The candidate's response is exceptionally well-structured, clearly following the STAR method, which makes it very easy to understand their approach. They effectively demonstrate strong soft skills including proactivity, resourcefulness in seeking out learning materials, and a structured approach to problem-solving. The inclusion of a key lesson learned further enhances the answer by showcasing a growth mindset.",
+        "overall": 9.0,
+        "question": "Tell me about a situation where you had to learn a new programming concept or tool quickly for a project. How did you approach the learning process, and what was the outcome?",
+        "candidate_answer": "There was a situation early in my career when I had to learn React.js for a web development project, even though I had primarily worked with vanilla JavaScript up until that point. The project required me to create a dynamic, interactive user interface, and React was the go-to framework for the task. To quickly get up to speed, I broke the learning process into manageable steps: first, I reviewed the official React documentation and completed a few tutorials to get familiar with concepts like components, state, and props. Then, I built small, focused projects to practice\u2014like creating a to-do list or a simple counter app. I also joined developer forums and discussion groups to ask questions and learn from others' experiences. By diving into hands-on coding, I was able to gain practical experience, and by the time I needed to implement React in the project, I felt confident enough to handle the tasks. The outcome was successful\u2014I integrated React into the project, and the final product was well-received. It taught me that hands-on practice, breaking concepts into smaller chunks, and seeking help from the community are key to learning new tools quickly.",
+        "debug": {
+            "analysis_time": 12.794704
         }
     },
     {
@@ -43,25 +56,12 @@
         "problem_solving_approach": 0,
         "teamwork_collaboration": 0,
         "alignment_with_values": 0,
-        "feedback": "The candidate's response offers no structured answer and completely avoids the question. This indicates a significant lack of preparation for behavioral questions and an inability to articulate past experiences demonstrating initiative or problem-solving. In future interviews, even if unsure, it's crucial to either ask for a moment to think or provide a brief example, however small, to show engagement.",
+        "feedback": "This answer provides no insight into your problem-solving abilities, thought process, or how you would handle challenges. A more effective response would outline a structured approach, demonstrating proactivity, resourcefulness, and a willingness to learn or seek help, even if you lack direct experience.",
         "overall": 0.0,
-        "question": "Describe a situation where you took the initiative to learn something new or improve a process, even if it wasn't explicitly asked of you (this could be for a school project, extracurricular activity, or personal learning). What was the outcome?",
-        "candidate_answer": "i am not sure",
+        "question": "If you were assigned a task that seemed outside your current skill set or was particularly challenging, how would you approach it to ensure it gets done effectively and on time?",
+        "candidate_answer": "i do not know",
         "debug": {
-            "analysis_time": 9.223819
-        }
-    },
-    {
-        "communication_clarity": 9,
-        "problem_solving_approach": 9,
-        "teamwork_collaboration": 9,
-        "alignment_with_values": 10,
-        "feedback": "This is a well-structured and thoughtful response, clearly outlining a proactive, step-by-step approach. The candidate effectively demonstrates strong soft skills such as empathy, root-cause analysis, collaboration, and clear communication, all focused on ensuring collective project success and maintaining quality.",
-        "overall": 9.2,
-        "question": "If you were working on a project with a tight deadline and realized that a teammate was struggling to complete their part, how would you approach the situation to ensure the project's success?",
-        "candidate_answer": "If I noticed a teammate struggling with their part of a project and the deadline was tight, I\u2019d first offer my help by asking if they need assistance or if there\u2019s anything specific they\u2019re stuck on. I\u2019d try to understand the root cause of the difficulty\u2014whether it's a lack of resources, time management issues, or technical challenges. If necessary, I\u2019d collaborate with them to solve the problem or take on some of their tasks to lighten their load. Communication is key, so I\u2019d also keep the team informed and ensure we adjust the plan if needed to meet the deadline without compromising quality.",
-        "debug": {
-            "analysis_time": 10.766282
+            "analysis_time": 6.857085
         }
     }
 ]

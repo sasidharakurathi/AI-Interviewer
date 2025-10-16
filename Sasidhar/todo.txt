@@ -6,3 +6,7 @@ TODO:
 
     Develop: AI HR Interviewer question generation and analyzer.    -> Done
     Implement OOP for AI Technical Interviewer and AI HR Interviewer.   -> Done
+
+    Test OpenAI's Whisper (Speech-to-Text)      -> Done
+    Implement OOP for Speech-to-Text    -> Done
+    Implement Error Handling and logging for Speech-to-Text     -> Done
