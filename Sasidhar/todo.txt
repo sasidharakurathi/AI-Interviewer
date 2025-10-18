@@ -10,3 +10,5 @@ TODO:
     Test OpenAI's Whisper (Speech-to-Text)      -> Done
     Implement OOP for Speech-to-Text    -> Done
     Implement Error Handling and logging for Speech-to-Text     -> Done
+
+    Record Audio via python and save it as a audio file

@@ -1,0 +1,93 @@
+
+--- File name audio1.mp3 ---
+Time taken: 0.949714
+Perhaps he made up to the party afterwards and took her, and his heart at end continued. It was not Fereyes set it over her.
+
+--- File name audio2.mp3 ---
+Time taken: 1.970887
+The birch canoe slid on the smooth planks. Glued the sheet to the dark blue background. It is easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hogs were fed chopped corn and garbage. Four hours of steady work faced us. A large size in stockings is hard to sell.
+
+--- File name audio3.mp3 ---
+Time taken: 1.72334
+The boy was there when the sun rose. A rod is used to catch pink salmon. The source of the huge river is the clear spring. Kick the ball straight and follow through. Help the woman get back to her feet. A pot of tea helps to pass the evening. The smoky fires lack flame and heat. The soft cushion broke the man's fall. The salt brief came across the sea. The girl at the booth sold 50 bonds.
+
+--- File name audio4.mp3 ---
+Time taken: 1.614002
+The small pup gnawed a hole in the sock. The fish twisted and turned on the bent hook. Press the pants and sew a button on the vest. The swan dive was far short of perfect. The beauty of the view stunned the young boy. Two blue fish swam in the tank. Her purse was full of useless trash. The colt reared and threw the tall rider. The snowed rain inhaled the same morning. Read verse out loud for pleasure.
+
+--- File name audio5.mp3 ---
+Time taken: 1.711881
+Hoist the load to your left shoulder. Take the winding path to reach the lake. Note closely the size of the gas tank. Wipe the grease off his dirty face. Men the coat before you go out. The wrist was badly strained and hung limp. The stray cat gave birth to kittens. The young girl gave no clear response. The meal was crude before the bell rang. The joy there is in living.
+
+
+-------------------------------------------------------------------------
+
+<- GPU ->
+
+--- File name audio1.mp3 ---
+Time taken: 0.941032
+Perhaps he made up to the party afterwards and took her, and his heart at end continued. It was not Fereyes set it over her.
+
+--- File name audio2.mp3 ---
+Time taken: 1.804136
+The birch canoe slid on the smooth planks. Glued the sheet to the dark blue background. It is easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hogs were fed chopped corn and garbage. Four hours of steady work faced us. A large size in stockings is hard to sell.
+
+--- File name audio3.mp3 ---
+Time taken: 1.699039
+The boy was there when the sun rose. A rod is used to catch pink salmon. The source of the huge river is the clear spring. Kick the ball straight and follow through. Help the woman get back to her feet. A pot of tea helps to pass the evening. The smoky fires lack flame and heat. The soft cushion broke the man's fall. The salt brief came across the sea. The girl at the booth sold 50 bonds.
+
+--- File name audio4.mp3 ---
+Time taken: 1.617919
+The small pup gnawed a hole in the sock. The fish twisted and turned on the bent hook. Press the pants and sew a button on the vest. The swan dive was far short of perfect. The beauty of the view stunned the young boy. Two blue fish swam in the tank. Her purse was full of useless trash. The colt reared and threw the tall rider. The snowed rain inhaled the same morning. Read verse out loud for pleasure.
+
+--- File name audio5.mp3 ---
+Time taken: 1.566284
+Hoist the load to your left shoulder. Take the winding path to reach the lake. Note closely the size of the gas tank. Wipe the grease off his dirty face. Men the coat before you go out. The wrist was badly strained and hung limp. The stray cat gave birth to kittens. The young girl gave no clear response. The meal was crude before the bell rang. The joy there is in living.
+
+--- File name sasi-audio1.m4a ---
+Time taken: 1.894137
+a list is a mutable object, the values of list are enclosed in square bracket and tuple is a "mutable" object, the values of a tuple are enclosed in circular bracket. We can create an empty list using list method and we can create an empty tuple using tuple method. Coming to the use cases we will use list where the data is changed once and once it's stored in a data structure and we will use tuple if the data is not changed once it is stored in a data structure like storing geometry points x,y.
+
+--- File name sasi-audio2.m4a ---
+Time taken: 1.436589
+To retrieve all employees from an employee table whose salary is greater than 50,000 rupees and who are in the sales department you would use the following SQL query. Select star from employees where salary is greater than 50,000 and department is equal to sales. This query selects columns from the employee table filtering rows where the salary is greater than 50,000 rupees and the department is "still".
+
+--- File name sasi-audio3.m4a ---
+Time taken: 1.86844
+In Java, a string is a sequence of characters and it is immutable, meaning once created its value cannot be changed. If you modify a string, a new string object is created instead of altering the original string. This immutable helps with security synchronization and caching. Repeatedly concatenating strings in a loop can be inefficient because each concatenation creates a new string object leading to unnecessary memory usage and performance overhead. To avoid this, it's better to use string builder or string buffer which allow for mutable strings and are more efficient for frequent modification.
+
+-------------------------------------------------------------------------------
+
+<- CPU ->
+
+--- File name audio1.mp3 ---
+Time taken: 2.260166
+Perhaps he made up to the party afterwards and took her, and his heart at end continued. It was not Fereyes set it over her.
+
+--- File name audio2.mp3 ---
+Time taken: 5.935638
+The birch canoe slid on the smooth planks. Glued the sheet to the dark blue background. It is easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch. The box was thrown beside the parked truck. The hogs were fed chopped corn and garbage. Four hours of steady work faced us. A large size in stockings is hard to sell.
+
+--- File name audio3.mp3 ---
+Time taken: 6.064845
+The boy was there when the sun rose. A rod is used to catch pink salmon. The source of the huge river is the clear spring. Kick the ball straight and follow through. Help the woman get back to her feet. A pot of tea helps to pass the evening. The smoky fires lack flame and heat. The soft cushion broke the man's fall. The salt brief came across the sea. The girl at the booth sold 50 bonds.
+
+--- File name audio4.mp3 ---
+Time taken: 5.762984
+The small pup gnawed a hole in the sock. The fish twisted and turned on the bent hook. Press the pants and sew a button on the vest. The swan dive was far short of perfect. The beauty of the view stunned the young boy. Two blue fish swam in the tank. Her purse was full of useless trash. The colt reared and threw the tall rider. The snowed rain inhaled the same morning. Read verse out loud for pleasure.
+
+--- File name audio5.mp3 ---
+Time taken: 5.210797
+Hoist the load to your left shoulder. Take the winding path to reach the lake. Note closely the size of the gas tank. Wipe the grease off his dirty face. Men the coat before you go out. The wrist was badly strained and hung limp. The stray cat gave birth to kittens. The young girl gave no clear response. The meal was crude before the bell rang. The joy there is in living.
+
+--- File name sasi-audio1.m4a ---
+Time taken: 5.312222
+a list is a mutable object, the values of list are enclosed in square bracket and tuple is a mutable object, the values of a tuple are enclosed in circular bracket. We can create an empty list using list method and we can create an empty tuple using tuple method. Coming to the use cases we will use list where the data is changed once and once it's stored in a data structure and we will use tuple if the data is not changed once it is stored in a data structure like storing geometry points x,y.
+
+--- File name sasi-audio2.m4a ---
+Time taken: 4.633059
+To retrieve all employees from an employee table whose salary is greater than 50,000 rupees and who are in the sales department you would use the following SQL query. Select star from employees where salary is greater than 50,000 and department is equal to sales. This query selects columns from the employee table filtering rows where the salary is greater than 50,000 rupees and the department is still.
+
+--- File name sasi-audio3.m4a ---
+Time taken: 5.73331
+In Java, a string is a sequence of characters and it is immutable, meaning once created its value cannot be changed. If you modify a string, a new string object is created instead of altering the original string. This immutable helps with security synchronization and caching. Repeatedly concatenating strings in a loop can be inefficient because each concatenation creates a new string object leading to unnecessary memory usage and performance overhead. To avoid this, it's better to use string builder or string buffer which allow for mutable strings and are more efficient for frequent modification.
