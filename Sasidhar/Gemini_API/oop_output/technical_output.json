@@ -1,41 +1,41 @@
 [
     {
-        "technical_depth": 9,
-        "communication_clarity": 7,
-        "problem_solving": 8,
-        "job_relevance": 10,
-        "feedback": "The candidate provided a solid and accurate explanation of the core differences between lists and tuples, correctly identifying mutability and syntax. Their example for tuple use cases, such as storing geometry points, effectively demonstrates an understanding of when to choose one over the other. To further enhance their answer, the candidate could focus on refining their written communication by proofreading for minor grammatical errors and spelling.",
-        "overall": 8.5,
-        "question": "Explain the difference between a Python list and a tuple, and when would you choose to use one over the other in a backend application?",
-        "candidate_answer": "list is a mutable object, the values of a list are enclosed in square backets. tuple is a immutable object, the values of a tuple are enclosed in a circular brackets. we can create a empty list using list() method and we can create a empty tuple using tuple() method. commnig to use cases we will use list where the data is changed once its stored in a data structure and we will use tuple if the data is not changed once its stored in a data structure like storing geomerty points x, y as (x,y)",
+        "technical_depth": 5,
+        "communication_clarity": 6,
+        "problem_solving": 5,
+        "job_relevance": 9,
+        "feedback": "The candidate correctly identified sorting with a lambda key function as a suitable approach for finding the top scores, which is a strong foundational understanding for a fresher. However, their proposed solution for handling extremely large lists using sets demonstrates a misunderstanding of how sets work for ordered retrieval. For future improvement, study the time complexity of sorting and explore more efficient algorithms like using a min-heap (e.g., Python's `heapq` module) for 'top K' problems to better address performance trade-offs.",
+        "overall": 6.2,
+        "question": "Imagine you have a list of student scores, and you need to find the top 3 highest scores and their corresponding student names. How would you approach this using Python's built-in data structures, and what are the potential trade-offs of your chosen method if the list were extremely large?",
+        "candidate_answer": "Yeah, so we will initially we will sort the list based on the passing a key lambda key function such that we only sort the where I mean we only sort the list based on the scores. Once the list is sorted, we can just fetch the top three top three values from the list using negative indexing. Then we can just display the particular names of that list. Then to the trade offs of the list when the maybe when the list is very large since the we can convert the two maybe set then since our student names were maybe would be unique. So we can convert the two sets and we can apply sorting and fetching based on that that would be a better idea.",
         "debug": {
-            "analysis_time": 10.714764
+            "analysis_time": 16.262046
         }
     },
     {
-        "technical_depth": 10,
-        "communication_clarity": 10,
-        "problem_solving": 10,
-        "job_relevance": 10,
-        "feedback": "The candidate provided an outstanding answer for a fresher. They not only correctly identified the most suitable data structure and its access method but also clearly articulated the 'why' with key benefits like unique keys and constant time complexity (O(1)). This demonstrates a strong foundational understanding of Python data structures and algorithms, which is highly relevant for the role.",
-        "overall": 10.0,
-        "question": "Imagine you need to store unique user IDs and their associated email addresses. Which Python data structure would be most suitable for this, and why? How would you access an email address given a user ID?",
-        "candidate_answer": "A dictionary would be the most suitable data structure for storing unique user IDs and their associated email addresses because it allows for fast lookups, with the user ID as the key and the email address as the value. In a dictionary, each key is unique, ensuring that each user ID is associated with only one email address. To access an email address given a user ID, you would simply use the syntax dictionary[user_id], where dictionary is the name of the dictionary and user_id is the specific ID you want to look up. This provides an efficient way to retrieve the email address in constant time, O(1).",
+        "technical_depth": 6,
+        "communication_clarity": 4,
+        "problem_solving": 5,
+        "job_relevance": 9,
+        "feedback": "The candidate correctly identified string reversal as a key step for checking palindromes and implicitly pointed to Python's string slicing with a negative step. To improve, they should elaborate on the full solution, including preprocessing steps like handling case and spaces, and structure their thought process more clearly and precisely when describing their approach.",
+        "overall": 6.0,
+        "question": "You're given a task to write a Python function that takes a string as input and returns `True` if it's a palindrome (reads the same forwards and backward, ignoring case and spaces), and `False` otherwise. Describe your thought process and the specific Python constructs you'd use to achieve this efficiently.",
+        "candidate_answer": "yeah okay we can answer we can just try to reverse the string using something like negative so that we can 'enter' the answer",
         "debug": {
-            "analysis_time": 10.33057
+            "analysis_time": 9.684347
         }
     },
     {
-        "technical_depth": 3,
-        "communication_clarity": 2,
-        "problem_solving": 2,
+        "technical_depth": 5,
+        "communication_clarity": 6,
+        "problem_solving": 0,
         "job_relevance": 10,
-        "feedback": "You correctly identified the four core principles of OOP and provided a syntactically valid, albeit minimal, Python class for a 'User'. To improve, focus on providing a brief explanation of each OOP principle and flesh out your class example with relevant attributes (e.g., `name`, `email`) and a proper `__init__` method. Additionally, pay close attention to spelling and grammar to enhance the professionalism and clarity of your communication.",
-        "overall": 4.2,
-        "question": "Describe the fundamental principles of Object-Oriented Programming (OOP) in Python. Can you provide a simple example of how you might use a class to represent a 'User' in a web application?",
-        "candidate_answer": "Inheritance, Encapsulation, Abtraction and Polymorphism are the basic principlles of OOP. we can create a class User: def __init__(): pass to repersenta user in a web application",
+        "feedback": "The candidate correctly identified the fundamental steps of the Git workflow (staging, committing, pushing) and understood the purpose of sharing changes. To improve, they should aim to use specific Git commands when explaining the process and ensure the sequence of steps is presented clearly. Most critically, they missed addressing the second part of the question regarding common mistakes a fresher might make.",
+        "overall": 5.2,
+        "question": "Consider a scenario where you've made some changes to your local Python project and need to share them with your team. Explain the basic steps involved in using Git to commit your changes and push them to a remote repository, and what would be a common mistake a fresher might make during this process?",
+        "candidate_answer": "yeah ok initially maybe I will try to add all the files into the repo I mean our local repository then then I will then I will try to stage them I will stage them using the stage command and yeah so then I then I can push them into my repo I know before that I need to commit the changes using the using something like a commit command and then I will push them into into the GitHub repo so that my team can my team can review the process",
         "debug": {
-            "analysis_time": 17.254402
+            "analysis_time": 12.669655
         }
     },
     {
@@ -43,12 +43,12 @@
         "communication_clarity": 0,
         "problem_solving": 0,
         "job_relevance": 0,
-        "feedback": "The candidate explicitly stated they are not aware of the concept. While honesty is appreciated, understanding SQL JOINs is a fundamental skill for a Python Developer, even at a fresher level, as database interaction is common. It is crucial to study basic SQL concepts like JOINs to be better prepared for roles involving data management.",
+        "feedback": "The candidate's response was completely nonsensical and did not provide any relevant information or attempt to answer the question. To improve, the candidate must articulate a coherent answer, even if it's a simple 'I don't know' or a basic attempt at the query logic, rather than providing filler words. This response indicates a fundamental lack of ability to communicate or engage with the interview question.",
         "overall": 0.0,
-        "question": "What is a 'JOIN' in SQL? Briefly explain the difference between an `INNER JOIN` and a `LEFT JOIN` and provide a scenario where each might be useful when querying a database for user data.",
-        "candidate_answer": "i am not aware of that",
+        "question": "You need to retrieve all customer records from a MySQL database where their `registration_date` is within the last 30 days. Write a conceptual MySQL query (you don't need exact syntax if unsure, but describe the logic) to accomplish this, and briefly explain why this type of query is important for backend applications.",
+        "candidate_answer": "yeah blah blah blah he oh ha ha ha",
         "debug": {
-            "analysis_time": 3.883891
+            "analysis_time": 4.215528
         }
     },
     {
@@ -56,12 +56,12 @@
         "communication_clarity": 0,
         "problem_solving": 0,
         "job_relevance": 0,
-        "feedback": "The provided answer 'pooopopopo' was not a relevant or intelligible response to the question asked. For a Python Developer role, even at a fresher level, a basic understanding of version control systems like Git and its fundamental commands is essential. I recommend studying core concepts of Git, including what it is and how to use `git add` and `git commit`.",
+        "feedback": "It appears you repeated the interview question rather than providing your own answer. To improve, please state which Python data structure you believe is most suitable for rapid lookups of user IDs and explain your reasoning, particularly regarding its time complexity for search operations. It's important to provide your solution directly.",
         "overall": 0.0,
-        "question": "You've made some changes to your Python code and need to save them. What is Git, and what are the basic commands you would use to stage and commit your changes?",
-        "candidate_answer": "pooopopopo",
+        "question": "Our backend systems handle a lot of data. If you were tasked with processing a large file containing user IDs and their purchase history, and you needed to quickly check if a specific user ID exists in the data, which Python data structure would be most suitable for storing the user IDs for rapid lookups, and why?",
+        "candidate_answer": "Our backend systems handle a lot of data. If you are tasked with the process, a large file containing with user IDs and their purchase history and you need to quickly check if a specific user ID exists in the data, which python data structure would be more suitable for storing the user IDs for rapid lookups and void.",
         "debug": {
-            "analysis_time": 4.764396
+            "analysis_time": 6.686887
         }
     }
 ]

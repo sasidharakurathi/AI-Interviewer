@@ -40,6 +40,7 @@ class Interviewer:
         try:
             start_index = response_text.find('{')
             end_index = response_text.rfind('}')
+            
             if start_index != -1 and end_index != -1 and end_index > start_index:
                 json_str = response_text[start_index : end_index + 1]
                 return json.loads(json_str)
@@ -68,23 +69,25 @@ class TechnicalInterviewer(Interviewer):
 
             ---
             **EVALUATION INSTRUCTIONS:**
+            
+            1.  **IGNORE TRANSCRIPTION ERRORS:** The candidate's answer is a raw transcript. You MUST IGNORE any lack of punctuation, grammatical errors, or run-on sentences. Focus ONLY on the content and clarity of their spoken ideas.
 
-            1.  **CALIBRATE FOR EXPERIENCE:** Your evaluation MUST be calibrated to the candidate's experience level.
+            2.  **CALIBRATE FOR EXPERIENCE:** Your evaluation MUST be calibrated to the candidate's experience level.
                 - A **Senior** is expected to provide deep, nuanced answers with real-world examples and trade-off analysis.
                 - A **Fresher** is expected to provide correct, textbook-level definitions.
                 - **An excellent answer for a Fresher might be a poor answer for a Senior.** Adjust your scores accordingly.
 
-            2.  **HANDLE POOR ANSWERS:** If the answer is empty, completely irrelevant (e.g., "I don't know"), or nonsensical, assign a score of 0 for all categories and provide feedback explaining why.
+            3.  **HANDLE POOR ANSWERS:** If the answer is empty, completely irrelevant (e.g., "I don't know"), or nonsensical, assign a score of 0 for all categories and provide feedback explaining why.
 
-            3.  **SCORING RUBRIC (0-10):**
+            4.  **SCORING RUBRIC (0-10):**
                 - `technical_depth`: 0=Incorrect/No answer. 5=Correct but basic. 10=Deep, nuanced, considers edge cases and trade-offs.
                 - `communication_clarity`: 0=Incoherent. 5=Understandable but disorganized. 10=Clear, concise, and well-structured.
                 - `problem_solving`: 0=No attempt. 5=Identifies the core concept. 10=Applies the concept to solve a hypothetical problem or discusses practical implications.
                 - `job_relevance`: 0=Irrelevant skill. 5=Related to the job description. 10=Directly addresses a key skill required for the role.
 
-            4.  **CONSTRUCTIVE FEEDBACK:** The `feedback` field is mandatory. Provide 2-3 sentences of specific, actionable feedback. Mention what the candidate did well and what they could improve upon.
+            5.  **CONSTRUCTIVE FEEDBACK:** The `feedback` field is mandatory. Provide 2-3 sentences of specific, actionable feedback. Mention what the candidate did well and what they could improve upon.
 
-            5.  **JSON OUTPUT:** Your entire response must be a single, valid JSON object with no extra text or explanations. The required keys are: `technical_depth`, `communication_clarity`, `problem_solving`, `job_relevance`, and `feedback`.
+            6.  **JSON OUTPUT:** Your entire response must be a single, valid JSON object with no extra text or explanations. The required keys are: `technical_depth`, `communication_clarity`, `problem_solving`, `job_relevance`, and `feedback`.
         """
         
         try:
@@ -132,14 +135,16 @@ class TechnicalInterviewer(Interviewer):
 
             1.  **GENERATE ALL QUESTIONS:** You must generate exactly {self.max_questions} unique questions in a single response.
 
-            2.  **ADJUST QUESTION DIFFICULTY:** You MUST tailor the questions to the candidate's experience level.
+            2.  **ENSURE VARIETY:** The questions must be distinct from each other. Avoid common, cliché interview questions. Be creative and focus on practical, thought-provoking scenarios relevant to the job.
+            
+            3.  **ADJUST QUESTION DIFFICULTY:** You MUST tailor the questions to the candidate's experience level.
                 - **If Fresher:** Ask about fundamental concepts, definitions, and basic syntax.
                 - **If Mid-Level:** Ask about practical applications, common libraries, and comparisons.
                 - **If Senior:** Ask about architectural design, scalability, performance optimization, and strategic trade-offs.
 
-            3.  **TOPIC COVERAGE:** Ensure the questions cover a range of topics from the job description (e.g., Python, MySQL, Git, Problem-Solving).
+            4.  **TOPIC COVERAGE:** Ensure the questions cover a range of topics from the job description (e.g., Python, MySQL, Git, Problem-Solving).
 
-            4.  **OUTPUT FORMAT (CRITICAL):** Your entire output MUST be a single, valid JSON object.
+            5.  **OUTPUT FORMAT (CRITICAL):** Your entire output MUST be a single, valid JSON object.
                 - The JSON object should have a single key named "questions".
                 - The value of "questions" must be an array of {self.max_questions} strings.
                 - Each string in the array is one interview question.
@@ -148,7 +153,10 @@ class TechnicalInterviewer(Interviewer):
 
         print("AI Interviewer: Generating interview questions.")
         try:
-            response = self.questions_model.generate_content(question_generation_prompt)
+            
+            generation_config = genai.types.GenerationConfig(temperature=0.8)
+            
+            response = self.questions_model.generate_content(question_generation_prompt, generation_config=generation_config)
             question_data = self.parse_json_response(response.text)
             
             # # --- Debug ---
@@ -191,18 +199,20 @@ class HRInterviewer(Interviewer):
 
             ---
             **EVALUATION INSTRUCTIONS:**
+            
+            1.  **IGNORE TRANSCRIPTION ERRORS:** The candidate's answer is a raw transcript. You MUST IGNORE any lack of punctuation, grammatical errors, or run-on sentences. Focus ONLY on the content and clarity of their spoken ideas.
 
-            1.  **Focus on the 'HOW', not the 'WHAT':** Evaluate *how* the candidate structures their answer, their thought process, and the soft skills they demonstrate. A great answer often follows the STAR method (Situation, Task, Action, Result).
+            2.  **Focus on the 'HOW', not the 'WHAT':** Evaluate *how* the candidate structures their answer, their thought process, and the soft skills they demonstrate. A great answer often follows the STAR method (Situation, Task, Action, Result).
 
-            2.  **SCORING RUBRIC (0-10):**
+            3.  **SCORING RUBRIC (0-10):**
                 - `communication_clarity`: 0=Incoherent or very hard to follow. 5=Understandable but could be better structured. 10=Clear, concise, and well-structured.
                 - `problem_solving_approach`: 0=No clear approach or avoids the question. 5=Describes a logical process. 10=Demonstrates a thoughtful, structured, and proactive approach to challenges.
                 - `teamwork_collaboration`: 0=Shows no evidence of teamwork; uses "I" exclusively in team contexts. 5=Mentions working with others. 10=Highlights specific positive contributions to a team and clearly values collaboration.
                 - `alignment_with_values`: 0=Response indicates values that conflict with a professional environment (e.g., blaming others). 5=Neutral response. 10=Demonstrates positive professional values like ownership, curiosity, and integrity.
 
-            3.  **CONSTRUCTIVE FEEDBACK:** The `feedback` field is mandatory. Provide 2-3 sentences of feedback on the answer's structure and the soft skills demonstrated.
+            4.  **CONSTRUCTIVE FEEDBACK:** The `feedback` field is mandatory. Provide 2-3 sentences of feedback on the answer's structure and the soft skills demonstrated.
 
-            4.  **JSON OUTPUT:** Your entire response MUST be a single, valid JSON object with the required keys.
+            5.  **JSON OUTPUT:** Your entire response MUST be a single, valid JSON object with the required keys.
         """
         try:
             
@@ -257,7 +267,10 @@ class HRInterviewer(Interviewer):
 
         print("AI Interviewer: Generating interview questions...")
         try:
-            response = self.questions_model.generate_content(question_generation_prompt)
+            
+            generation_config = genai.types.GenerationConfig(temperature=0.8)
+            
+            response = self.questions_model.generate_content(question_generation_prompt, generation_config=generation_config)
             question_data = self.parse_json_response(response.text)
             
             # # --- Debug ---
