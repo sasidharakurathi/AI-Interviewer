@@ -13,3 +13,10 @@ TODO:
 
     Record Audio via python and save it as a audio file     -> Done
     Integrate AI Interviewer and Speech-to-Text and test it.    -> Done
+
+    Create api handle in python to handle the AI Interviewer.   -> Done
+    Create a frontend (html, css, js) to Implement the AI Interviewer.  -> Done
+    Intergrate MySQL Database to the AI Interviewer.    -> Done
+    Fix: loading in interview.html  -> Done
+    Implement both Technical Interviewer and HR Interviewer. -> Done
+    

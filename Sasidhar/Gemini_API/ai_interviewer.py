@@ -245,14 +245,14 @@ class HRInterviewer(Interviewer):
             You are an expert HR Interviewer creating a question set for a behavioral interview.
 
             **Primary Goal:**
-            Generate a set of behavioral and situational questions to assess a candidate's soft skills, problem-solving approach, and cultural fit for a {JOB_ROLE} position.
+            Generate a set of behavioral and situational questions to assess a candidate's soft skills, problem-solving approach, and cultural fit for a {self.job_role} position.
 
-            **Candidate's Experience Level:** {CANDIDATE_EXPERIENCE}
+            **Candidate's Experience Level:** {self.candidate_experience}
 
             ---
             **CRITICAL INSTRUCTIONS:**
 
-            1.  **GENERATE ALL QUESTIONS:** You must generate exactly {MAX_QUESTIONS} unique questions.
+            1.  **GENERATE ALL QUESTIONS:** You must generate exactly {self.max_questions} unique questions.
 
             2.  **QUESTION FOCUS:** The questions MUST be behavioral or situational. Do NOT ask technical questions. Focus on these areas:
                 - **Teamwork & Collaboration:** "Describe a time you had a conflict with a coworker..."
@@ -262,7 +262,7 @@ class HRInterviewer(Interviewer):
 
             3.  **ADJUST FOR EXPERIENCE:** For a **Fresher**, you can ask about academic projects or hypothetical situations. For an **experienced** candidate, ask for specific examples from their past jobs.
 
-            4.  **OUTPUT FORMAT (CRITICAL):** Your entire output MUST be a single, valid JSON object with a single key "questions", which contains an array of {MAX_QUESTIONS} strings.
+            4.  **OUTPUT FORMAT (CRITICAL):** Your entire output MUST be a single, valid JSON object with a single key "questions", which contains an array of {self.max_questions} strings.
         """
 
         print("AI Interviewer: Generating interview questions...")

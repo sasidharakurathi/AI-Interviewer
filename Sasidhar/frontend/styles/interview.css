@@ -1,0 +1,64 @@
+body {
+    background: #f8f9fa;
+}
+
+.interview-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .5rem;
+}
+
+.loading-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.question-section {
+    display: none;
+}
+
+.question-text {
+    background: #fff;
+    border-left: .25rem solid #0d6efd;
+    padding: 1rem;
+    border-radius: .375rem;
+}
+
+.recording-controls {
+    text-align: center;
+}
+
+.record-btn {
+    min-width: 180px;
+}
+
+.processing-message {
+    margin-top: 1rem;
+}
+
+
+.recording-indicator {
+    display: none;
+    margin-top: .75rem;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.recording-indicator.active {
+    display: block;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}

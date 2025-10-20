@@ -19,4 +19,11 @@ openai-whisper # it requires the command-line tool "ffmpeg" to be installed on y
 # Audio Capture and Saving
 pyaudio
 
+# Python Server (API)
+fastapi[standard]
+python-multipart
+
+# MySQL Connector
+mysql-connector-python
+
 
