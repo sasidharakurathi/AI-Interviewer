@@ -1,7 +1,7 @@
-# fastapi dev server.py --port 8000
+# fastapi dev server.py --port 5000
 # python -m http.server 8080
 
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 import uuid
 import mysql.connector
@@ -62,7 +62,7 @@ app.add_middleware(
 
 stt_instance = SpeechToText()
 
-
+### --- Test APIs --- 
 @app.get("/get-all-interviews")
 def get_all_interviews():
         
@@ -71,10 +71,10 @@ def get_all_interviews():
     return interviews
 
 
-@app.post("/start-technical-interview/{selected_interview_id}")
-def start_technical_interview(selected_interview_id: int):
+@app.post("/start-technical-interview/{candidate_interview_id}")
+def start_technical_interview(candidate_interview_id: int):
     
-    selected_interview = db_queries.get_interviews(selected_interview_id)
+    selected_interview = db_queries.get_interviews(candidate_interview_id)
     
     job_role = selected_interview[0].get("job_role")
     job_description = selected_interview[0].get("job_description")
@@ -99,7 +99,7 @@ def start_technical_interview(selected_interview_id: int):
         cursor = db_connection.cursor()
         
         insert_query = """
-        INSERT INTO candidate_interviews (interview_id, interview_type, job_role, candidate_experience, questions, status, current_question_index)
+        INSERT INTO candidate_interviews (candidate_interview_id, interview_type, job_role, candidate_experience, questions, status, current_question_index)
         VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         questions_json = json.dumps(questions)
@@ -124,9 +124,9 @@ def start_technical_interview(selected_interview_id: int):
         "question": questions[0]
     }
     
-@app.post("/start-hr-interview/{selected_interview_id}")
-def start_hr_interview(selected_interview_id: int):
-    selected_interview = db_queries.get_interviews(selected_interview_id)
+@app.post("/start-hr-interview/{candidate_interview_id}")
+def start_hr_interview(candidate_interview_id: int):
+    selected_interview = db_queries.get_interviews(candidate_interview_id)
     
     job_role = selected_interview[0].get("job_role")
     job_description = selected_interview[0].get("job_description")
@@ -151,7 +151,7 @@ def start_hr_interview(selected_interview_id: int):
         cursor = db_connection.cursor()
         
         insert_query = """
-        INSERT INTO candidate_interviews (interview_id, interview_type, job_role, candidate_experience, questions, status, current_question_index)
+        INSERT INTO candidate_interviews (candidate_interview_id, interview_type, job_role, candidate_experience, questions, status, current_question_index)
         VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         questions_json = json.dumps(questions)
@@ -177,9 +177,9 @@ def start_hr_interview(selected_interview_id: int):
 
 
 @app.post("/submit-answer/{interview_id}")
-async def submit_answer(interview_id: str, selected_interview_id: int, audio_file: UploadFile = File(...)):
+async def submit_answer(interview_id: int, candidate_interview_id: str = Form(...), audio_file: UploadFile = File(...)):
     
-    interview = db_queries.get_interviews(selected_interview_id)
+    interview = db_queries.get_interviews(interview_id)
     job_description = interview[0].get("job_description")
 
     db_connection = None
@@ -187,7 +187,7 @@ async def submit_answer(interview_id: str, selected_interview_id: int, audio_fil
         db_connection = db_queries.get_db_connection()
         cursor = db_connection.cursor(dictionary=True)
         
-        cursor.execute("SELECT * FROM candidate_interviews WHERE interview_id = %s", (interview_id,))
+        cursor.execute("SELECT * FROM candidate_interviews WHERE candidate_interview_id = %s", (candidate_interview_id,))
         interview = cursor.fetchone()
         
         if not interview:
@@ -195,9 +195,12 @@ async def submit_answer(interview_id: str, selected_interview_id: int, audio_fil
         
         if interview['status'] == 'completed':
             return {"message": "This interview has already been completed."}
+        
+        if interview['status'] == 'not_started':
+            return {"message": "This interview is not yet started."}
 
 
-        temp_audio_path = f"temp_{interview_id}.wav"
+        temp_audio_path = f"temp_{candidate_interview_id}.wav"
         with open(temp_audio_path, "wb") as f:
             f.write(await audio_file.read())
             
@@ -226,23 +229,23 @@ async def submit_answer(interview_id: str, selected_interview_id: int, audio_fil
         analysis = interviewer.analyze_answer(current_question, transcribed_text)
 
         insert_answer_query = """
-        INSERT INTO answers (interview_id, interview_type, question_text, answer_text, analysis)
+        INSERT INTO answers (candidate_interview_id, interview_type, question_text, answer_text, analysis)
         VALUES (%s, %s, %s, %s, %s)
         """
-        cursor.execute(insert_answer_query, (interview_id, interview_type, current_question, transcribed_text, json.dumps(analysis)))
+        cursor.execute(insert_answer_query, (candidate_interview_id, interview_type, current_question, transcribed_text, json.dumps(analysis)))
 
         next_question_index = current_question_index + 1
         response = {}
 
         if next_question_index >= len(questions):
-            cursor.execute("UPDATE candidate_interviews SET status = 'completed', current_question_index = %s WHERE interview_id = %s", (next_question_index, interview_id))
+            cursor.execute("UPDATE candidate_interviews SET status = 'completed', current_question_index = %s WHERE candidate_interview_id = %s", (next_question_index, candidate_interview_id))
             response = {
                 "message": "Interview completed. Thank you!",
                 "interview_id": interview_id,
                 "final_analysis": analysis
             }
         else:
-            cursor.execute("UPDATE candidate_interviews SET current_question_index = %s WHERE interview_id = %s", (next_question_index, interview_id))
+            cursor.execute("UPDATE candidate_interviews SET current_question_index = %s WHERE candidate_interview_id = %s", (next_question_index, candidate_interview_id))
             response = {
                 "message": "Answer received. Here is the next question.",
                 "interview_id": interview_id,
@@ -280,3 +283,90 @@ def get_interview_details(interview_id: str):
     #     "answers": answers,
     #     "status": interview["status"]
     # }
+    
+    
+### --- ATS Integrated APIs --- 
+
+@app.post("/start-interview/{candidate_interview_id}")
+def start_interview(candidate_interview_id: str):
+    candidate_interview_details = db_queries.get_candidate_interview_details(candidate_interview_id)
+    
+    if candidate_interview_details is None:
+        return {
+            "error": True,
+            "errorDescription": "Candidate Interview ID not found",
+        }
+        
+    if candidate_interview_details["status"] == "not_started":
+        job_role = candidate_interview_details.get("job_role")
+        job_description = candidate_interview_details.get("job_description")
+        candidate_experience = candidate_interview_details.get("candidate_experience")
+        max_questions = candidate_interview_details.get("max_questions")
+        interview_type = candidate_interview_details.get("interview_type")
+        interview_id = candidate_interview_details.get("interview_id")
+
+        if interview_type == 'technical':
+            interviewer = TechnicalInterviewer(
+                job_role=job_role,
+                job_description=job_description,
+                candidate_experience=candidate_experience,
+                max_questions=max_questions
+            )
+        elif interview_type == 'hr':
+            interviewer = HRInterviewer(
+                job_role=job_role,
+                job_description=job_description,
+                candidate_experience=candidate_experience,
+                max_questions=max_questions
+            )
+            
+        
+        questions = interviewer.generate_questions()
+        if not questions:
+            print("Failed to generate interview questions.")
+            return {
+                "error": True,
+                "errorDescription": "Failed to generate interview questions.",
+            }
+        
+        try:
+            conn = db_queries.get_db_connection()
+            cursor = conn.cursor()
+            
+            query = "UPDATE candidate_interviews SET questions = %s, status = %s WHERE candidate_interview_id = %s;"
+            cursor.execute(query, (json.dumps(questions), 'in_progress', candidate_interview_id))
+            conn.commit()
+        
+        except Exception as e:
+            print("Error while updating questions in candidate_interviews.")
+            print(f"Error: {e}")
+            
+            return {
+                "error": True,
+                "errorDescription": "Error while updating questions in candidate_interviews.",
+            }
+            
+        finally:
+            cursor.close()
+            conn.close()
+            
+        
+        print("Returing crt details")
+        return {
+            "message": "Technical interview started successfully.",
+            "candidate_interview_id": candidate_interview_id,
+            "question_number": 1,
+            "total_questions": len(questions),
+            "question": questions[0],
+            "interview_id": interview_id,
+            "error": False,
+        }
+    
+    elif candidate_interview_details["status"] == "in_progress":
+        return {"error": True, "errorDescription": "Interview already started"}
+
+    elif candidate_interview_details["status"] == "completed":
+        return {"error": True, "errorDescription": "This interview has already been completed."}    
+        
+        
+# progress -> not_started, in_progress, completed

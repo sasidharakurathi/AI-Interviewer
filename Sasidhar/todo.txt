@@ -20,3 +20,11 @@ TODO:
     Fix: loading in interview.html  -> Done
     Implement both Technical Interviewer and HR Interviewer. -> Done
     
+    Integrate ATS and AI Interviewer: -> Done
+        Create an unique Interview ID and store it in MySQL Database -> Done
+        Send AI Interview link to email (from ATS) -> Done
+        Valid the Link at AI Interviewer Server -> Done
+        Conduct Interview and store results in MySQL Database -> Done 
+        Fix: Handle Invalid Interview IDs, Invalid Emails -> Done
+    
+

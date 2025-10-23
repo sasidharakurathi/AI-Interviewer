@@ -2,34 +2,6 @@
 const HOST = "http://localhost:5000/"
 
 
-const setCookie = (name, value, days) => {
-    let expires = "";
-    if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // days * hours * minutes * seconds * milliseconds
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-const getCookie = (name) => {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-
-const deleteCookie = (name) => {
-    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}
-
-
-let interviewId = null;
-
 let currentQuestion = null;
 let totalQuestions = null;
 
@@ -39,42 +11,41 @@ let isRecording = false;
 
 let allAnalysis = [];
 
+let interviewId = null;
+
+const params = new URLSearchParams(window.location.search);
+const candidate_interview_id = params.get('candidate_interview_id');
+const interviewType = params.get('interview_type');
+
+console.log('Candidate Interview ID:', candidate_interview_id);
+console.log('Interview Type:', interviewType);
+
 // Start interview when page loads
 $(document).ready(function() {
     startInterviewSession();
 });
 
 function startInterviewSession() {
-
-    const selectedInterviewId = getCookie('selectedInterviewId');
-    const interviewType = getCookie('interviewType');
-    // console.log(selectedInterviewId);
-
-    if (!selectedInterviewId || !interviewType) {
-        showAlert('Interview details not found. Please select an interview from the home page.', 'danger');
-        setTimeout(() => window.location.href = 'index.html', 3000);
+    
+    if (!candidate_interview_id || !interviewType) {
+        showAlert('Interview details not found. Please contact support.', 'danger');
         return;
     }
 
     
     // generate correct API url
-    let url = '';
-    if (interviewType === 'technical') {
-        $("#interviewTypeHeading").text('Technical Interview');
-        url = `${HOST}start-technical-interview/${selectedInterviewId}/`;
-    } else if (interviewType === 'hr') {
-        $("#interviewTypeHeading").text('HR Interview');
-        url = `${HOST}start-hr-interview/${selectedInterviewId}/`;
-    } else {
-        showAlert('Invalid interview type.', 'danger');
-        return;
-    }
-
+    let url = `${HOST}start-interview/${candidate_interview_id}/`;
+    
     $.ajax({
         url: url,
         type: 'POST',
         success: function(response) {
             console.log('Interview started:', response);
+
+            if (response.error) {
+                showAlert(`${response.errorDescription}`, 'danger');
+                return;
+            }
             
             interviewId = response.interview_id;
             totalQuestions = response.total_questions;
@@ -166,10 +137,10 @@ function stopRecording() {
 // send audio blob to backend
 function submitAnswer(audioBlob) {
     const formData = new FormData();
-    const selectedInterviewId = getCookie('selectedInterviewId');
     formData.append('audio_file', audioBlob, 'answer.wav'); // key, value (blob), filename
+    formData.append('candidate_interview_id', candidate_interview_id);
 
-    const urlWithQuery = `${HOST}submit-answer/${interviewId}?candidate_interview_id=${selectedInterviewId}`;
+    const urlWithQuery = `${HOST}submit-answer/${interviewId}`;
 
     $.ajax({
         url: urlWithQuery,
@@ -181,18 +152,8 @@ function submitAnswer(audioBlob) {
             // console.log('Answer submitted:', response);
 
             if (response.message.includes('completed')) {
-                // Set the final interviewId for the results page
-                setCookie('interviewId', interviewId, 1);
-
-                // Clean up selection cookies
-                deleteCookie('selectedInterviewId');
-                deleteCookie('interviewType');
-
-
                 // Redirect to results page.
-                setTimeout(() => {
-                    window.location.href = 'results.html';
-                }, 1000);
+                alert("Interview successfully completed");
             }
 
             else {
@@ -210,8 +171,8 @@ function submitAnswer(audioBlob) {
                 $('#recordBtn').html('<i class="bi bi-mic-fill"></i> Start Recording');
             }
         },
-        error: function(error) {
-            console.error('Error submitting answer:', error);
+        error: function(xhr, status, err) {
+            console.error('Submission error:', xhr.responseText || err);
             showAlert('Failed to submit answer. Please try again.', 'danger');
 
             // hide processing message

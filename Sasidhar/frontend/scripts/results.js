@@ -1,4 +1,4 @@
-const HOST = "http://localhost:8000/"
+const HOST = "http://localhost:5000/"
 
 const getCookie = (name) => {
     const nameEQ = name + "=";
