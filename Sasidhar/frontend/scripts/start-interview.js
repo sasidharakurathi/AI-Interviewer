@@ -152,8 +152,9 @@ function submitAnswer(audioBlob) {
             // console.log('Answer submitted:', response);
 
             if (response.message.includes('completed')) {
-                // Redirect to results page.
-                alert("Interview successfully completed");
+                // Redirect to interview completed page.
+                // alert("Interview successfully completed");
+                window.location.href = 'interview-completed.html';
             }
 
             else {
@@ -186,7 +187,7 @@ function submitAnswer(audioBlob) {
     });
 }
 
-// helper function to display errors
+// function to display errors
 function showAlert(message, type) {
     const alertHtml = `
         <div class="alert alert-${type} alert-dismissible fade show" role="alert">

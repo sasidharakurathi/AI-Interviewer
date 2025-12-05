@@ -26,5 +26,8 @@ TODO:
         Valid the Link at AI Interviewer Server -> Done
         Conduct Interview and store results in MySQL Database -> Done 
         Fix: Handle Invalid Interview IDs, Invalid Emails -> Done
-    
 
+        Add Email sent pop up to ATS    -> Done
+        Add Interview Completed Text to AI Interviewer  -> Done
+        Add AI Interview Report page in ATS Website     -> Done
+    
