@@ -1,4 +1,5 @@
-import pyaudio
+import sounddevice as sd
+import numpy as np
 import wave
 import json
 from datetime import datetime
@@ -7,51 +8,47 @@ from Gemini_API.ai_interviewer import TechnicalInterviewer, HRInterviewer
 from Whisper_SpeechtoText.speech_to_text import SpeechToText
 
 
-def record_audio(filename="temp_audio.wav"):
+def record_audio(filename="temp_audio.wav", duration=None):
     CHUNK = 1024
-    FORMAT = pyaudio.paInt16
+    FORMAT = np.int16
     CHANNELS = 1
     RATE = 44100
-    
-    p = pyaudio.PyAudio()
-
-    # Stream object
-    stream = p.open(format=FORMAT,
-                    channels=CHANNELS,
-                    rate=RATE,
-                    input=True,
-                    frames_per_buffer=CHUNK)
-
-    frames = [] # list of chunks (frames)
 
     print("\n---------------------------------------------------------")
     input("-> Press Enter to start recording your answer.")
     print("-> Recording... Press Ctrl+C to stop.")
 
+    frames = []
+
     try:
-        # read audio
-        while True:
-            data = stream.read(CHUNK)
-            frames.append(data)
-    except KeyboardInterrupt: # Ctrl + C pressed
+        if duration:
+            # Fixed duration recording
+            recording = sd.rec(int(duration * RATE), samplerate=RATE, channels=CHANNELS, dtype=FORMAT)
+            sd.wait()
+            frames = recording
+        else:
+            # Infinite recording until Ctrl+C
+            with sd.InputStream(samplerate=RATE, channels=CHANNELS, dtype=FORMAT, blocksize=CHUNK) as stream:
+                while True:
+                    data, _ = stream.read(CHUNK)
+                    frames.append(data)
+    except KeyboardInterrupt:
         print("-> Recording finished.")
         print("---------------------------------------------------------")
 
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
+    # Convert frames to numpy array
+    if isinstance(frames, list):
+        frames = np.concatenate(frames, axis=0)
 
-    # Save the recorded data as a WAV file
-    with wave.open(filename, 'wb') as fp: # fp in write byte mode
-        # set data configuration
+    # Save as WAV
+    with wave.open(filename, 'wb') as fp:
         fp.setnchannels(CHANNELS)
-        fp.setsampwidth(p.get_sample_size(FORMAT))
+        fp.setsampwidth(np.dtype(FORMAT).itemsize)
         fp.setframerate(RATE)
-        
-        # write frames into file
-        fp.writeframes(b''.join(frames))
-    
+        fp.writeframes(frames.tobytes())
+
     return filename
+
 
 def integration_testing():
     MAX_QUESTIONS = 5

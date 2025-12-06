@@ -31,3 +31,21 @@ TODO:
         Add Interview Completed Text to AI Interviewer  -> Done
         Add AI Interview Report page in ATS Website     -> Done
     
+
+    Facial emotion and confidence analysis: (using DeepFace and Google's MediaPipe)
+        Test the working of "DeepFace" module           -> Done
+        Test the working of "MediaPipe" module          -> Done
+
+        Implement "Gaze Tracking". (looking at camera or looking away from camera)          -> Done
+        Implement "Head Posture" logic.                                                     -> Done
+        Implement "Blink Rate" detection. (later)
+
+        Implement "DeepFace" to find out the Smile, Surprise and Neutral of the Candidate   -> Done
+
+        Test the modules once again.                                                        -> Done
+        Integrate the Facial emotion and confidence analysis with AI Interviewer
+            -> Before integrating the modules, need to test and find out the better
+                approach for video streaming from candidate's browser to Server.
+
+        Implement scoring and reports system for "Facial emotion and confidence analysis" 
+

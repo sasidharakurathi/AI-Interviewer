@@ -1,0 +1,45 @@
+# Sasidhar
+
+# Make sure to use Python 3.11.x Version
+
+--extra-index-url https://download.pytorch.org/whl/cu118    # Comment this out if you are using torch-cpu
+
+# Load .env
+python-dotenv==1.2.1
+
+# LLM for Interview Question Generation and Candidate answer analylsis
+ollama==0.6.1
+google-generativeai==0.8.5
+google-ai-generativelanguage==0.6.15
+
+# PyTorch
+torch==2.7.0
+torchvision==0.22.0
+torchaudio==2.7.0
+
+# Speech-to-Text
+openai-whisper==20250625    # it requires the command-line tool "ffmpeg" to be installed on your system
+numpy==1.26.4
+
+# Audio Capture and Saving
+sounddevice==0.5.1
+
+# Python Server (API)
+fastapi[standard]==0.115.7
+python-multipart==0.0.20
+
+# MySQL Connector
+mysql-connector-python==9.5.0
+
+# Emotion Detection
+deepface==0.0.93
+
+# Gaze and Head Direction Detection
+mediapipe==0.10.14
+
+# Computer Vision
+opencv-python==4.10.0.84
+
+# Tensor flow for model training
+tensorflow==2.16.1
+tensorboard==2.16.1

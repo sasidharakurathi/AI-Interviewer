@@ -1,4 +1,7 @@
 # Sasidhar
+
+# Make sure to use Python 3.11.x Version
+
 --extra-index-url https://download.pytorch.org/whl/cu118  # Comment this out if you are using torch-cpu
 
 # Load .env

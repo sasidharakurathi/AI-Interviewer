@@ -211,3 +211,6 @@ __marimo__/
 req.txt
 .vscode
 .hintrc
+tempCodeRunnerFile.python
+dataset/
+models/
